@@ -236,6 +236,7 @@ public class PlayerController : MonoBehaviour
             if(raycast.collider != null)
             {
                 dashPos = raycast.point;
+                Debug.Log(raycast);
             }
 
             rb.MovePosition(dashPos);
