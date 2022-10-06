@@ -24,7 +24,7 @@ public class Map : MonoBehaviour
         if (canLoad)
         {
             GameManager.instance.mapToInstatiate = id;
-            StartCoroutine(LoadAsynchronously("SampleScene"));
+            StartCoroutine(LoadAsynchronously("Game Screen"));
         }
     }
 
