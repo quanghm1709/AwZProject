@@ -222,6 +222,7 @@ public class PlayerController : MonoBehaviour
             if(currentHp <= 0)
             {
                 UIController.instance.deathScreen.SetActive(true);
+                Time.timeScale = 0f;
             }
         }       
     }

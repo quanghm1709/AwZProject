@@ -11,6 +11,7 @@ public class UIController : MonoBehaviour
     [Header("Bar")]
     [SerializeField] public Slider hpBar;
     [SerializeField] public Button fire;
+    [SerializeField] public Text gold;
 
     [Header("Wave Notification")]
     [SerializeField] public Text nextWaveCd;
@@ -61,6 +62,7 @@ public class UIController : MonoBehaviour
         reload.maxValue = PlayerController.instance.currentWeap.reloadTime;
 
         currentGold.text = "Current Gold: " + GameManager.instance.coin;
+        gold.text = "Gold: " + GameManager.instance.coin;
 
         if (!updateScreen.activeInHierarchy)
         {

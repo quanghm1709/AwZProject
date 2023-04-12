@@ -82,9 +82,13 @@ public class RangeWeaponController : WeaponController
 
     public void UpdateWeap(UpdateChoice.UpdateWeap upData)
     {
-        maxBullet += (int)(maxBullet*upData.upAmmo);
-        reloadTime -= upData.upReload;
-        timeBtwAttack = upData.upFireRate;
-        bulletData.Updamage(upData.upDamage);
+        if(upData != null)
+        {
+            maxBullet += (int)(maxBullet * upData.upAmmo);
+            reloadTime -= upData.upReload;
+            timeBtwAttack = upData.upFireRate;
+            bulletData.Updamage(upData.upDamage);
+        }
+
     }
 }
