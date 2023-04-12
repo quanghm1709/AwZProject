@@ -25,7 +25,8 @@ public class BulletController : MonoBehaviour
 
         if (lifeTime <= 0)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+           // Destroy(gameObject);
         }
         
     }
@@ -46,7 +47,10 @@ public class BulletController : MonoBehaviour
         } 
         if(other.tag != "Player")
         {
-            Destroy(gameObject);
+            rb.velocity = Vector2.zero;
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+            gameObject.SetActive(false);
+            //Destroy(gameObject);
         }
         
     }

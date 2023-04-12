@@ -4,6 +4,7 @@ ScriptsOnlyBuild:
     - UnityStandardAssets.CrossPlatformInput.ButtonHandler
     - UnityStandardAssets.CrossPlatformInput.Joystick
     Assembly-CSharp.dll:
+    - AdsInitializer
     - AudioManager
     - BulletController
     - CameraController
@@ -14,8 +15,10 @@ ScriptsOnlyBuild:
     - LifeTime
     - Map
     - MeleeEnemy
+    - ObjectPool
     - PlayerController
     - RangeWeaponController
+    - RewardedAdsButton
     - StartScreenUI
     - UIController
     - UpdateCard
@@ -43,6 +46,9 @@ ScriptsOnlyBuild:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
     - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
+    UnityEngine.Advertisements.dll:
+    - UnityEngine.Advertisements.Placeholder
+    - UnityEngine.Advertisements.Platform.Editor.BannerPlaceholder
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.EventTrigger
@@ -57,6 +63,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Text
   serializedClasses:
     Assembly-CSharp:
+    - Preallocation
     - UpdateChoice/UpdatePlayer
     - UpdateChoice/UpdateWeap
     - WaveSpawner/Wave
@@ -194,6 +201,12 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: UIController
     methodName: Pause
+  - assembly: Assembly-CSharp
+    fullTypeName: UIController
+    methodName: LoadMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: UIController
+    methodName: LoadMenu
   sceneClasses:
     Assets/Scenes/Game Screen.unity:
     - Class: 1
@@ -227,59 +240,65 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 668}
-    - Class: 114
-      Script: {instanceID: 1556}
+      Script: {instanceID: 670}
     - Class: 114
       Script: {instanceID: 1558}
     - Class: 114
       Script: {instanceID: 1560}
     - Class: 114
-      Script: {instanceID: 1782}
+      Script: {instanceID: 1562}
     - Class: 114
-      Script: {instanceID: 1866}
+      Script: {instanceID: 1784}
     - Class: 114
-      Script: {instanceID: 1894}
+      Script: {instanceID: 1868}
     - Class: 114
-      Script: {instanceID: 1944}
+      Script: {instanceID: 1896}
     - Class: 114
-      Script: {instanceID: 2142}
+      Script: {instanceID: 1946}
     - Class: 114
-      Script: {instanceID: 2982}
+      Script: {instanceID: 2144}
     - Class: 114
-      Script: {instanceID: 3046}
+      Script: {instanceID: 2984}
     - Class: 114
-      Script: {instanceID: 3172}
+      Script: {instanceID: 3048}
     - Class: 114
-      Script: {instanceID: 3458}
+      Script: {instanceID: 3174}
     - Class: 114
-      Script: {instanceID: 3782}
+      Script: {instanceID: 3460}
     - Class: 114
-      Script: {instanceID: 3932}
+      Script: {instanceID: 3784}
     - Class: 114
-      Script: {instanceID: 4010}
+      Script: {instanceID: 3934}
     - Class: 114
-      Script: {instanceID: 4168}
+      Script: {instanceID: 4012}
     - Class: 114
-      Script: {instanceID: 4302}
+      Script: {instanceID: 4170}
     - Class: 114
-      Script: {instanceID: 4524}
+      Script: {instanceID: 4304}
     - Class: 114
-      Script: {instanceID: 4586}
+      Script: {instanceID: 4526}
     - Class: 114
-      Script: {instanceID: 4822}
+      Script: {instanceID: 4588}
     - Class: 114
-      Script: {instanceID: 4948}
+      Script: {instanceID: 4824}
     - Class: 114
       Script: {instanceID: 4950}
     - Class: 114
-      Script: {instanceID: 5540}
+      Script: {instanceID: 4952}
     - Class: 114
-      Script: {instanceID: 6122}
+      Script: {instanceID: 5542}
     - Class: 114
-      Script: {instanceID: 6198}
+      Script: {instanceID: 6124}
     - Class: 114
-      Script: {instanceID: 6600}
+      Script: {instanceID: 6200}
+    - Class: 114
+      Script: {instanceID: 6602}
+    - Class: 114
+      Script: {instanceID: 38452}
+    - Class: 114
+      Script: {instanceID: 43586}
+    - Class: 114
+      Script: {instanceID: 44814}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -328,35 +347,35 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 668}
-    - Class: 114
-      Script: {instanceID: 1556}
+      Script: {instanceID: 670}
     - Class: 114
       Script: {instanceID: 1558}
     - Class: 114
       Script: {instanceID: 1560}
     - Class: 114
-      Script: {instanceID: 1866}
+      Script: {instanceID: 1562}
     - Class: 114
-      Script: {instanceID: 1994}
+      Script: {instanceID: 1868}
     - Class: 114
-      Script: {instanceID: 2982}
+      Script: {instanceID: 1996}
     - Class: 114
-      Script: {instanceID: 2990}
+      Script: {instanceID: 2984}
     - Class: 114
-      Script: {instanceID: 3172}
+      Script: {instanceID: 2992}
     - Class: 114
-      Script: {instanceID: 3782}
+      Script: {instanceID: 3174}
     - Class: 114
-      Script: {instanceID: 3932}
+      Script: {instanceID: 3784}
     - Class: 114
-      Script: {instanceID: 4302}
+      Script: {instanceID: 3934}
     - Class: 114
-      Script: {instanceID: 4318}
+      Script: {instanceID: 4304}
     - Class: 114
-      Script: {instanceID: 6110}
+      Script: {instanceID: 4320}
     - Class: 114
-      Script: {instanceID: 6600}
+      Script: {instanceID: 6112}
+    - Class: 114
+      Script: {instanceID: 6602}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -880,7 +899,7 @@ ScriptsOnlyBuild:
     className: ActivationTrack
   - hash:
       serializedVersion: 2
-      Hash: 193b1e22fe6b53e8481e94d2784644bc
+      Hash: c93bcc2fb1b6ac252116a9923ce32a52
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: WaveSpawner
@@ -1088,8 +1107,50 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
     className: FabrikSolver2D
+  - hash:
+      serializedVersion: 2
+      Hash: e13126ad9033ed06607172f50bf680b0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ObjectPool
+  - hash:
+      serializedVersion: 2
+      Hash: 82076665a529aedd69bfe3a8b5ba3ed4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AdsInitializer
+  - hash:
+      serializedVersion: 2
+      Hash: a325152ad9563ed900af221c132fea36
+    assemblyName: UnityEngine.Advertisements.dll
+    namespaceName: UnityEngine.Advertisements.Utilities
+    className: CoroutineExecutor
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: UnityEngine.Advertisements.dll
+    namespaceName: UnityEngine.Advertisements.Utilities
+    className: ApplicationQuit
+  - hash:
+      serializedVersion: 2
+      Hash: 88e2c6f501bf5dead831a3e44c30de40
+    assemblyName: UnityEngine.Advertisements.dll
+    namespaceName: UnityEngine.Advertisements.Platform.Editor
+    className: BannerPlaceholder
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: UnityEngine.Advertisements.dll
+    namespaceName: UnityEngine.Advertisements
+    className: Placeholder
+  - hash:
+      serializedVersion: 2
+      Hash: 5c20d3006511c536ad29392cd89bd384
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: RewardedAdsButton
   platform: 13
   scenePathNames:
   - Assets/Scenes/Start Screen.unity
   - Assets/Scenes/Game Screen.unity
-  playerPath: C:/Users/Admin/Desktop/AloneWithZombie_Ver_1_0_0.aab
+  playerPath: C:/Users/Admin/Desktop/awz.apk

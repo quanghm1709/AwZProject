@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 60;
     }
     private void Start()
     {
@@ -26,4 +28,9 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    void Update()
+    {
+        if (Application.targetFrameRate != 60)
+            Application.targetFrameRate = 60;
+    }
 }

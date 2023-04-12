@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -38,8 +39,15 @@ public class RangeWeaponController : WeaponController
             {
                 if (Input.GetKeyDown(KeyCode.Space) || CrossPlatformInputManager.GetButtonDown("Fire"))
                 {
-                    Instantiate(bullet, firePoint.position, firePoint.rotation);
-                    Instantiate(fireEft, dropBulletEff.position, dropBulletEff.rotation);
+                     Instantiate(bullet, firePoint.position, firePoint.rotation);
+                     Instantiate(fireEft, dropBulletEff.position, dropBulletEff.rotation);
+                    //GameObject b = BulletPool.instance.bulletPool.GetObject(bullet.name);
+                    //b.transform.position = firePoint.position;
+                    //b.transform.rotation = firePoint.rotation;
+
+                    //GameObject ef = BulletPool.instance.bulletPool.GetObject(fireEft.name);
+                   // ef.transform.position = dropBulletEff.position;
+                    
                     timeBtwAtk = timeBtwAttack;
                     currentBullet -= 1;
                 }
@@ -82,13 +90,22 @@ public class RangeWeaponController : WeaponController
 
     public void UpdateWeap(UpdateChoice.UpdateWeap upData)
     {
-        if(upData != null)
+        try
         {
-            maxBullet += (int)(maxBullet * upData.upAmmo);
-            reloadTime -= upData.upReload;
-            timeBtwAttack = upData.upFireRate;
-            bulletData.Updamage(upData.upDamage);
+            if (upData != null)
+            {
+                maxBullet += (int)(maxBullet * upData.upAmmo);
+                reloadTime -= upData.upReload;
+                timeBtwAttack = upData.upFireRate;
+                bulletData.Updamage(upData.upDamage);
+            }
         }
+        catch(Exception e)
+        {
+            Debug.Log(e.Message);
+        }
+         
+        
 
     }
 }

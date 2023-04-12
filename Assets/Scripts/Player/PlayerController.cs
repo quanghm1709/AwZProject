@@ -262,5 +262,6 @@ public class PlayerController : MonoBehaviour
     public void UpdateCurrentWeap(UpdateChoice.UpdateWeap upWeap)
     {
         currentWeap.UpdateWeap(upWeap);
+        
     }
 }

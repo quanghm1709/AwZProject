@@ -25,6 +25,7 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] private Transform[] spawnPoint;
 
     [SerializeField] private SpawnState state = SpawnState.COUNTING;
+    [SerializeField] private ObjectPool enemyPool;
 
     private void Awake()
     {
@@ -138,8 +139,10 @@ public class WaveSpawner : MonoBehaviour
     public void SpawnEnemy(Transform _enemy)
     {
         Transform spawnpoint = spawnPoint[Random.Range(0, spawnPoint.Length)];
-        Instantiate(_enemy, spawnpoint.position, spawnpoint.rotation);
-
+        //Instantiate(_enemy, spawnpoint.position, spawnpoint.rotation);
+        GameObject enemy = enemyPool.GetObject("Normal Zombie");
+        enemy.GetComponent<EnemyController>().Reset();
+        enemy.transform.position = spawnpoint.position;
         //Debug.Log("Spawning Enemy: " + _enemy.name);
     }
 
