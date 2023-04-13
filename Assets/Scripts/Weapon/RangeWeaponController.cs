@@ -37,16 +37,16 @@ public class RangeWeaponController : WeaponController
         {
             if (canAttack && !isReload)
             {
-                if (Input.GetKeyDown(KeyCode.Space) || CrossPlatformInputManager.GetButtonDown("Fire"))
+                if (Input.GetKey(KeyCode.Space) || CrossPlatformInputManager.GetButton("Fire"))
                 {
-                     Instantiate(bullet, firePoint.position, firePoint.rotation);
-                     Instantiate(fireEft, dropBulletEff.position, dropBulletEff.rotation);
-                    //GameObject b = BulletPool.instance.bulletPool.GetObject(bullet.name);
-                    //b.transform.position = firePoint.position;
-                    //b.transform.rotation = firePoint.rotation;
+                    //Instantiate(bullet, firePoint.position, firePoint.rotation);
+                    //Instantiate(fireEft, dropBulletEff.position, dropBulletEff.rotation);
+                    GameObject b = BulletPool.instance.bulletPool.GetObject(bullet.name);
+                    b.transform.position = firePoint.position;
+                    b.transform.rotation = firePoint.rotation;
 
-                    //GameObject ef = BulletPool.instance.bulletPool.GetObject(fireEft.name);
-                   // ef.transform.position = dropBulletEff.position;
+                    GameObject ef = BulletPool.instance.bulletPool.GetObject(fireEft.name);
+                    ef.transform.position = dropBulletEff.position;
                     
                     timeBtwAtk = timeBtwAttack;
                     currentBullet -= 1;
@@ -104,8 +104,5 @@ public class RangeWeaponController : WeaponController
         {
             Debug.Log(e.Message);
         }
-         
-        
-
     }
 }

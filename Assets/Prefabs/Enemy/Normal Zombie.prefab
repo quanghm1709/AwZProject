@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8213410352661149501}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Attack Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 8213410352679479277}
   - component: {fileID: 8213410352679479278}
   - component: {fileID: 8213410352679479279}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Normal Zombie
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -143,7 +143,7 @@ GameObject:
   - component: {fileID: 8213410353116893788}
   - component: {fileID: 8213410353116893789}
   - component: {fileID: 8213410353116893790}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -248,7 +248,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8213410353192844836}
   - component: {fileID: 8213410353192844835}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -332,7 +332,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8213410354222573544}
   - component: {fileID: 8213410354222573543}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -417,7 +417,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8213410354497679498}
   - component: {fileID: 8213410354497679497}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hand (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

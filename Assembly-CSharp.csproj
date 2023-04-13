@@ -56,30 +56,82 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\UI\UpdateChoice.cs" />
-    <Compile Include="Assets\Scripts\Game Controller\GameStart.cs" />
-    <Compile Include="Assets\Scripts\UI\UIController.cs" />
-    <Compile Include="Assets\Scripts\Map\Map.cs" />
-    <Compile Include="Assets\Scripts\Enemy\EnemyController.cs" />
+    <Compile Include="Assets\IronSource\Scripts\IronSourceBannerEvents.cs" />
+    <Compile Include="Assets\IronSource\DemoScene\IronSourceDemoScript.cs" />
+    <Compile Include="Assets\IronSource\Scripts\IronSource.cs" />
+    <Compile Include="Assets\IronSource\Scripts\IronSourceInitilizer.cs" />
+    <Compile Include="Assets\Advertisement\Script\AdsInitializer.cs" />
+    <Compile Include="Assets\IronSource\Scripts\IUnityOfferwall.cs" />
+    <Compile Include="Assets\IronSource\Scripts\IronSourceSegment.cs" />
     <Compile Include="Assets\Scripts\Game Controller\GameManager.cs" />
-    <Compile Include="Assets\Scripts\LifeTime.cs" />
+    <Compile Include="Assets\IronSource\Scripts\IronSourceRewardedVideoLevelPlayAndroid.cs" />
+    <Compile Include="Assets\IronSource\Scripts\IronSourceInitializationAndroid.cs" />
+    <Compile Include="Assets\IronSource\Scripts\AndroidAgent.cs" />
+    <Compile Include="Assets\IronSource\Scripts\IronSourceRewardedVideoLevelPlayManualAndroid.cs" />
+    <Compile Include="Assets\IronSource\Scripts\IronSourceSegmentAndroid.cs" />
+    <Compile Include="Assets\Advertisement\Script\RewardedAdsButton.cs" />
     <Compile Include="Assets\Scripts\Weapon\MeleeWeaponController.cs" />
+    <Compile Include="Assets\Advertisement\Script\InterstitialAd.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Weapon\BulletController.cs" />
-    <Compile Include="Assets\Scripts\Game Controller\AudioManager.cs" />
+    <Compile Include="Assets\IronSource\Scripts\UnsupportedPlatformAgent.cs" />
+    <Compile Include="Assets\IronSource\Scripts\IUnityLevelPlayRewardedVideoManual.cs" />
+    <Compile Include="Assets\IronSource\Scripts\IronSourceImpressionData.cs" />
+    <Compile Include="Assets\Scripts\ObjectPool.cs" />
+    <Compile Include="Assets\IronSource\Scripts\IronSourcePlacement.cs" />
+    <Compile Include="Assets\IronSource\Scripts\IronSourceInterstitialAndroid.cs" />
     <Compile Include="Assets\Scripts\Item\ItemPickup.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\Game Controller\WaveSpawner.cs" />
-    <Compile Include="Assets\Scripts\Enemy\MeleeEnemy.cs" />
-    <Compile Include="Assets\Scripts\UI\UpdateCard.cs" />
+    <Compile Include="Assets\IronSource\Scripts\IronSourceRewardedVideoManualAndroid.cs" />
+    <Compile Include="Assets\IronSource\Scripts\IronSourceError.cs" />
+    <Compile Include="Assets\IronSource\Scripts\IUnityRewardedVideo.cs" />
+    <Compile Include="Assets\Scripts\Game Controller\BulletPool.cs" />
+    <Compile Include="Assets\IronSource\Scripts\IronSourceEvents.cs" />
+    <Compile Include="Assets\IronSource\Scripts\IronSourceRewardedVideoEvents.cs" />
+    <Compile Include="Assets\IronSource\Scripts\IUnityBanner.cs" />
+    <Compile Include="Assets\IronSource\Scripts\IronSourceImpressionDataAndroid.cs" />
+    <Compile Include="Assets\IronSource\Scripts\IUnityLevelPlayRewardedVideo.cs" />
     <Compile Include="Assets\Scripts\Weapon\WeaponController.cs" />
     <Compile Include="Assets\Scripts\Start Screen\StartScreenUI.cs" />
     <Compile Include="Assets\Scripts\Item\Item.cs" />
+    <Compile Include="Assets\Advertisement\Script\BannerAd.cs" />
+    <Compile Include="Assets\IronSource\Scripts\IronSourceMediationSettings.cs" />
+    <Compile Include="Assets\Scripts\UI\UpdateChoice.cs" />
+    <Compile Include="Assets\IronSource\Scripts\IronSourceConstants.cs" />
+    <Compile Include="Assets\Scripts\Game Controller\GameStart.cs" />
+    <Compile Include="Assets\IronSource\Scripts\IUnityLevelPlayBanner.cs" />
+    <Compile Include="Assets\Scripts\UI\UIController.cs" />
+    <Compile Include="Assets\Scripts\Map\Map.cs" />
+    <Compile Include="Assets\IronSource\Scripts\IronSourceIAgent.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyController.cs" />
+    <Compile Include="Assets\IronSource\Scripts\IronSourceEventsDispatcher.cs" />
+    <Compile Include="Assets\Scripts\LifeTime.cs" />
+    <Compile Include="Assets\IronSource\Scripts\iOSAgent.cs" />
+    <Compile Include="Assets\IronSource\Scripts\IronSourceJSON.cs" />
+    <Compile Include="Assets\IronSource\Scripts\IronSourceInterstitialLevelPlayAndroid.cs" />
+    <Compile Include="Assets\IronSource\Scripts\IronSourceOfferwallAndroid.cs" />
+    <Compile Include="Assets\IronSource\Scripts\IUnityInterstitial.cs" />
+    <Compile Include="Assets\IronSource\Scripts\IUnityInitialization.cs" />
+    <Compile Include="Assets\IronSource\Scripts\IronSourceBannerLevelPlayAndroid.cs" />
+    <Compile Include="Assets\IronSource\Scripts\IronSourceUtils.cs" />
+    <Compile Include="Assets\IronSource\Scripts\IronSourceBannerAndroid.cs" />
+    <Compile Include="Assets\Scripts\Game Controller\AudioManager.cs" />
+    <Compile Include="Assets\IronSource\Scripts\IUnityImpressionData.cs" />
+    <Compile Include="Assets\Scripts\Enemy\MeleeEnemy.cs" />
+    <Compile Include="Assets\Scripts\Game Controller\WaveSpawner.cs" />
+    <Compile Include="Assets\IronSource\Scripts\IUnitySegment.cs" />
+    <Compile Include="Assets\Advertisement\Script\AdsManagerExample.cs" />
+    <Compile Include="Assets\Scripts\UI\UpdateCard.cs" />
+    <Compile Include="Assets\IronSource\Scripts\IronSourceAdInfo.cs" />
+    <Compile Include="Assets\IronSource\Scripts\IronSourceRewardedVideoAndroid.cs" />
+    <Compile Include="Assets\IronSource\Scripts\IronSourceInterstitialEvents.cs" />
     <Compile Include="Assets\Scripts\Weapon\RangeWeaponController.cs" />
-    <Compile Include="Assets\Scripts\ObjectPool.cs" />
-    <Compile Include="Assets\Scripts\Ads Manager\AdsInitializer.cs" />
-    <Compile Include="Assets\Scripts\Ads Manager\RewardedAdsButton.cs" />
-    <Compile Include="Assets\Scripts\Game Controller\BulletPool.cs" />
+    <Compile Include="Assets\IronSource\Scripts\IUnityRewardedVideoManual.cs" />
+    <Compile Include="Assets\IronSource\Scripts\IronSourceConfig.cs" />
+    <Compile Include="Assets\IronSource\Scripts\IUnityLevelPlayInterstitial.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\IronSource\Plugins\Android\IronSource.plugin\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -319,23 +371,23 @@
     <Reference Include="UnityEditor.UnityConnectModule">
       <HintPath>D:\Unity Editor\Version\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Burst.Cecil.Pdb">
+      <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Burst.Unsafe">
       <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Cecil.Mdb">
       <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Mdb.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Burst.Cecil.Pdb">
-      <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Pdb.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Burst.Cecil">
       <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Cecil.Rocks">
       <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>D:\Unity Editor\Version\2021.3.16f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -751,6 +803,9 @@
     <Reference Include="Unity.Burst.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.Advertisements">
+      <HintPath>Library\ScriptAssemblies\UnityEngine.Advertisements.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.2D.IK.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.IK.Editor.dll</HintPath>
     </Reference>
@@ -823,17 +878,14 @@
     <Reference Include="Unity.Notifications.Android">
       <HintPath>Library\ScriptAssemblies\Unity.Notifications.Android.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.Advertisements.Editor">
+      <HintPath>Library\ScriptAssemblies\UnityEngine.Advertisements.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.2D.Common.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.SpriteShape.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Advertisements">
-      <HintPath>Library\ScriptAssemblies\UnityEngine.Advertisements.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Advertisements.Editor">
-      <HintPath>Library\ScriptAssemblies\UnityEngine.Advertisements.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

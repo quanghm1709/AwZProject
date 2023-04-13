@@ -14,10 +14,10 @@ TagManager:
   - Water
   - UI
   - Object
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Player Bullet
+  - Enemy
+  - Enemy Bullet
   - 
   - 
   - 

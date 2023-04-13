@@ -74,12 +74,22 @@ public class UIController : MonoBehaviour
         
     }
 
+    internal void ReContinue()
+    {
+        Debug.Log("Revive");
+        Time.timeScale = 1f;
+        deathScreen.SetActive(false);
+        GameObject.Find("Player")
+            .GetComponent<PlayerController>()
+            .Revive();
+    }
+
     public void GenerateUpdateCard(int k)
     {
         for(int i = 0; i < k; i++)
         {
             UpdateCard card = Instantiate(cardList[Random.Range(0, cardList.Length)]);
-            foreach(Transform child in UIController.instance.cardDisplay.transform)
+            foreach(Transform child in cardDisplay.transform)
             {
                 UpdateCard c = child.gameObject.GetComponent<UpdateCard>();
                 if (card.name == c.name)

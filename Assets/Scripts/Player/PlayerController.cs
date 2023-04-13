@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityEngine.UI;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
@@ -68,8 +69,8 @@ public class PlayerController : MonoBehaviour
         //moveInput.x = Input.GetAxisRaw("Horizontal");
         //moveInput.y = Input.GetAxisRaw("Vertical");
 
-        dirX = CrossPlatformInputManager.GetAxis("Horizontal") * currentSpeed;
-        dirY = CrossPlatformInputManager.GetAxis("Vertical") * currentSpeed;
+        dirX = CrossPlatformInputManager.GetAxisRaw("Horizontal") * currentSpeed;
+        dirY = CrossPlatformInputManager.GetAxisRaw("Vertical") * currentSpeed;
         moveInput = new Vector3(dirX, dirY).normalized;
 
         if (dirX != 0 || dirY != 0)
@@ -118,6 +119,11 @@ public class PlayerController : MonoBehaviour
         {
             GetDamage(1);
         }
+    }
+
+    internal void Revive()
+    {
+        currentHp = maxHp;
     }
 
     private void FixedUpdate()

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 678071100695896459}
   - component: {fileID: 5836511487224614444}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,6 +27,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3658777631395657479}
   m_RootOrder: 1
@@ -43,6 +44,7 @@ TrailRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 0
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -150,7 +152,7 @@ GameObject:
   - component: {fileID: -963120413967003963}
   - component: {fileID: -845247866000136479}
   - component: {fileID: -6343190860466481796}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Base Gun Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,6 +169,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9116025768596202107}
   - {fileID: 678071100695896459}
@@ -225,7 +228,7 @@ MonoBehaviour:
   damage: 1
   speed: 40
   lifeTime: 2
-  knockbackPower: 10
+  knockbackPower: 15000
   knockTime: 1
   rb: {fileID: -963120413967003963}
   weap: {fileID: 3856003163344963880, guid: a3eb241e7347fa340ac22686c7146947, type: 3}
@@ -240,7 +243,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9116025768596202107}
   - component: {fileID: 6599841508885164805}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bullet Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -257,6 +260,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3658777631395657479}
   m_RootOrder: 0
@@ -272,6 +276,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
