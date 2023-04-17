@@ -228,7 +228,7 @@ MonoBehaviour:
   damage: 1
   speed: 40
   lifeTime: 2
-  knockbackPower: 15000
+  knockbackPower: 4
   knockTime: 1
   rb: {fileID: -963120413967003963}
   weap: {fileID: 3856003163344963880, guid: a3eb241e7347fa340ac22686c7146947, type: 3}
