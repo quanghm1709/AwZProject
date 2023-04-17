@@ -13,6 +13,7 @@ public class WeaponManager : MonoBehaviour
         {
             weapUIs[weapons.IndexOf(weap)].Show(weap.weapUI, weap.weaponName, weap.damage, weap.timeBtwAttack, weap.maxBullet, weap.price);
         }
+        DontDestroyOnLoad(this.gameObject);
     }
 
     public void Equip(string name)
