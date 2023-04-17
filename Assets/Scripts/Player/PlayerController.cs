@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityEngine.UI;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
@@ -56,7 +57,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        SwapWeap();
+        SwapWeap(GameManager.instance.weapon);
         currentHp = maxHp;
         currentSpeed = maxSpeed;
         closetEnemy = null;
@@ -68,8 +69,8 @@ public class PlayerController : MonoBehaviour
         //moveInput.x = Input.GetAxisRaw("Horizontal");
         //moveInput.y = Input.GetAxisRaw("Vertical");
 
-        dirX = CrossPlatformInputManager.GetAxis("Horizontal") * currentSpeed;
-        dirY = CrossPlatformInputManager.GetAxis("Vertical") * currentSpeed;
+        dirX = CrossPlatformInputManager.GetAxisRaw("Horizontal") * currentSpeed;
+        dirY = CrossPlatformInputManager.GetAxisRaw("Vertical") * currentSpeed;
         moveInput = new Vector3(dirX, dirY).normalized;
 
         if (dirX != 0 || dirY != 0)
@@ -118,6 +119,11 @@ public class PlayerController : MonoBehaviour
         {
             GetDamage(1);
         }
+    }
+
+    internal void Revive()
+    {
+        currentHp = maxHp;
     }
 
     private void FixedUpdate()
@@ -222,6 +228,7 @@ public class PlayerController : MonoBehaviour
             if(currentHp <= 0)
             {
                 UIController.instance.deathScreen.SetActive(true);
+                Time.timeScale = 0f;
             }
         }       
     }
@@ -245,9 +252,26 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    public void SwapWeap()
+    public void SwapWeap(WeaponController weapon)
     {
-        currentWeap = hand.GetComponentInChildren<RangeWeaponController>();
+        if (weapon != null)
+        {
+            RangeWeaponController weap = (RangeWeaponController)Instantiate(weapon);
+            weap.transform.parent = hand;
+            weap.transform.position = hand.position;
+            weap.transform.localRotation = Quaternion.Euler(Vector3.zero);
+            weap.transform.localScale = Vector3.one;
+
+            currentWeap = weap;
+        }
+        else
+        {
+            hand.transform.GetChild(0).gameObject.SetActive(true);
+            currentWeap = hand.GetComponentInChildren<RangeWeaponController>();
+        }
+
+
+        //currentWeap = hand.GetComponentInChildren<RangeWeaponController>();
     }
 
     public void UpdateStats(UpdateChoice.UpdatePlayer upStats)
@@ -261,5 +285,6 @@ public class PlayerController : MonoBehaviour
     public void UpdateCurrentWeap(UpdateChoice.UpdateWeap upWeap)
     {
         currentWeap.UpdateWeap(upWeap);
+        
     }
 }

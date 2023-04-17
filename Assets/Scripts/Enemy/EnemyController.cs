@@ -19,11 +19,17 @@ public class EnemyController : MonoBehaviour
 
     public void GetDamage(int damage)
     {
+        GameObject goldPool = GameObject.Find("Gold Pool");
+
         currentHp -= damage;
         if(currentHp <= 0)
         {
-            Instantiate(itemToDrop[Random.Range(0, itemToDrop.Length)], transform.position, transform.rotation);
-            Destroy(gameObject);
+            //Instantiate(itemToDrop[Random.Range(0, itemToDrop.Length)], transform.position, transform.rotation);
+            GameObject g = goldPool.GetComponent<ObjectPool>().GetObject(itemToDrop[0].name);
+            g.transform.position = transform.position;
+            
+            gameObject.SetActive(false);
+            //Destroy(gameObject);
         }
     }
     public void Flip()
@@ -35,5 +41,10 @@ public class EnemyController : MonoBehaviour
         {
             transform.localScale = new Vector3(-1, 1, 1);
         }
+    }
+
+    public void Reset()
+    {
+        currentHp = maxHp;
     }
 }

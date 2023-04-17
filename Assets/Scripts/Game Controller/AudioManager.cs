@@ -8,14 +8,18 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
-    }
-    private void Start()
-    {
         if (this == null)
+        {
+            instance = this;
+        }
+        else
         {
             Destroy(gameObject);
         }
+    }
+    private void Start()
+    {
+
         DontDestroyOnLoad(gameObject);
     }
 }

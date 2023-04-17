@@ -27,6 +27,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3264836622701222827}
   - {fileID: 3264836622952970413}
@@ -50,13 +51,16 @@ MonoBehaviour:
   weapLv: 0
   damage: 1
   weapUI: {fileID: -8650684085791909609, guid: 498ed7686d148f948b20c66256a0f7a4, type: 3}
-  firePoint: {fileID: 3264836622952970413}
-  bullet: {fileID: 5866017371111023183, guid: f95fcdd60b658374fba921eb56aa2f53, type: 3}
   timeBtwAttack: 0.2
   maxBullet: 20
+  price: 2000
+  atk: 0
+  firePoint: {fileID: 3264836622952970413}
+  bullet: {fileID: 5866017371111023183, guid: f95fcdd60b658374fba921eb56aa2f53, type: 3}
   reloadTime: 1.5
   dropBulletEff: {fileID: 3264836622800395967}
   fireEft: {fileID: 6916412757550715927, guid: f4fcd40f3cd8fae4d88dbb911248f23e, type: 3}
+  bulletData: {fileID: 0}
   currentBullet: 0
   reloadtime: 0
 --- !u!1 &3264836622701222828
@@ -86,6 +90,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.272, y: 0.092999995, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3264836621769769474}
   m_RootOrder: 0
@@ -101,6 +106,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -167,6 +173,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.522, y: 0.433, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3264836621769769474}
   m_RootOrder: 2
@@ -197,6 +204,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.172, y: 0.283, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3264836621769769474}
   m_RootOrder: 1
