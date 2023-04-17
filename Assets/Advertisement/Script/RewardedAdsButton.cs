@@ -84,6 +84,12 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
         UIController.instance.ReContinue();
     }
 
+    public virtual void GrantReward(string type)
+    {
+        
+    }
+
+
     void OnDestroy()
     {
         // Clean up the button listeners:
