@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        SwapWeap();
+        SwapWeap(GameManager.instance.weapon);
         currentHp = maxHp;
         currentSpeed = maxSpeed;
         closetEnemy = null;
@@ -252,11 +252,11 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    public void SwapWeap()
+    public void SwapWeap(WeaponController weapon)
     {
         if (GameManager.instance.weapon != null)
         {
-            RangeWeaponController weap = (RangeWeaponController)Instantiate(GameManager.instance.weapon);
+            RangeWeaponController weap = (RangeWeaponController)Instantiate(weapon);
             weap.transform.parent = hand;
             weap.transform.position = hand.position;
             weap.transform.localRotation = Quaternion.Euler(Vector3.zero);

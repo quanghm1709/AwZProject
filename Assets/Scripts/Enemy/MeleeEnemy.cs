@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class MeleeEnemy : EnemyController
 {
@@ -15,6 +16,7 @@ public class MeleeEnemy : EnemyController
     [Header("Component")]
     [SerializeField] private Transform attackPoint;
     [SerializeField] private float attackRange;
+    [SerializeField] private NavMeshAgent agent;
 
     private Vector3 moveDirection;
     private void Start()
@@ -24,18 +26,24 @@ public class MeleeEnemy : EnemyController
 
         currentHp = maxHp;
         currentSpeed = maxSpeed;
+
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
     }
 
     private void Update()
     {
         if (canMove)
         {
-            moveDirection = PlayerController.instance.transform.position - transform.position;
-            rb.velocity = moveDirection * currentSpeed;
+            //moveDirection = PlayerController.instance.transform.position - transform.position;
+            //rb.velocity = moveDirection * currentSpeed;
+            agent.SetDestination(PlayerController.instance.transform.position);
+            agent.speed = currentSpeed;
         }
         else
         {
-            rb.velocity = Vector2.zero;
+            agent.speed = 0;
+            //rb.velocity = Vector2.zero;
         }
         
         Flip();

@@ -13,4 +13,7 @@ public class WeaponController : MonoBehaviour
     public float timeBtwAttack;
     public int maxBullet;
     public float price;
+
+    //Update
+
 }
