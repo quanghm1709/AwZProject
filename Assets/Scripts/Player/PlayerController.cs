@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        SwapWeap();
+        SwapWeap(GameManager.instance.weapon);
         currentHp = maxHp;
         currentSpeed = maxSpeed;
         closetEnemy = null;
@@ -252,17 +252,18 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    public void SwapWeap()
+    public void SwapWeap(WeaponController weapon)
     {
-        if (GameManager.instance.weapon != null)
+        if (weapon != null)
         {
-            RangeWeaponController weap = (RangeWeaponController)Instantiate(GameManager.instance.weapon);
+            RangeWeaponController weap = (RangeWeaponController)Instantiate(weapon);
             weap.transform.parent = hand;
             weap.transform.position = hand.position;
             weap.transform.localRotation = Quaternion.Euler(Vector3.zero);
             weap.transform.localScale = Vector3.one;
 
             currentWeap = weap;
+            hand.transform.GetChild(0).gameObject.SetActive(false);
         }
         else
         {
@@ -272,6 +273,22 @@ public class PlayerController : MonoBehaviour
 
 
         //currentWeap = hand.GetComponentInChildren<RangeWeaponController>();
+    }
+
+    public void Equip1()
+    {
+        GameObject.Find("Weapon Manager").GetComponent<WeaponManager>().Equip("G Sniper");
+        PlayerController.instance.SwapWeap(GameManager.instance.weapon);
+    }
+
+    public void Equip2()
+    {
+
+    }
+
+    public void Equip3()
+    {
+
     }
 
     public void UpdateStats(UpdateChoice.UpdatePlayer upStats)
