@@ -254,7 +254,24 @@ public class PlayerController : MonoBehaviour
 
     public void SwapWeap()
     {
-        currentWeap = hand.GetComponentInChildren<RangeWeaponController>();
+        if (GameManager.instance.weapon != null)
+        {
+            RangeWeaponController weap = (RangeWeaponController)Instantiate(GameManager.instance.weapon);
+            weap.transform.parent = hand;
+            weap.transform.position = hand.position;
+            weap.transform.localRotation = Quaternion.Euler(Vector3.zero);
+            weap.transform.localScale = Vector3.one;
+
+            currentWeap = weap;
+        }
+        else
+        {
+            hand.transform.GetChild(0).gameObject.SetActive(true);
+            currentWeap = hand.GetComponentInChildren<RangeWeaponController>();
+        }
+
+
+        //currentWeap = hand.GetComponentInChildren<RangeWeaponController>();
     }
 
     public void UpdateStats(UpdateChoice.UpdatePlayer upStats)

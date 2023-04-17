@@ -9,8 +9,6 @@ public class RangeWeaponController : WeaponController
     [SerializeField] public int atk;
     [SerializeField] private Transform firePoint;
     [SerializeField] private GameObject bullet;
-    [SerializeField] private float timeBtwAttack;
-    [SerializeField] public int maxBullet;
     [SerializeField] public float reloadTime;
 
     [Header("Effect")]
@@ -96,7 +94,7 @@ public class RangeWeaponController : WeaponController
             {
                 maxBullet += (int)(maxBullet * upData.upAmmo);
                 reloadTime -= upData.upReload;
-                timeBtwAttack = upData.upFireRate;
+                timeBtwAtk = timeBtwAtk - timeBtwAtk * upData.upFireRate;
                 bulletData.Updamage(upData.upDamage);
             }
         }

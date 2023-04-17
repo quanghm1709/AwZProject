@@ -6,22 +6,13 @@ public class AdsManagerExample : AdsInitializer
 {
     float timeToTurnOnAds = 10f;
 
+    private void Start()
+    {
+        rewardedAdsButtons[0].enabled = false;
+    }
+
     private void Update()
     {
-        //Test Interstital Ads
-        if (timeToTurnOnAds > 0)
-        {
-            timeToTurnOnAds -= Time.deltaTime;
-        }
-        else
-        {
-            interstitialAd.ShowAd();
-            timeToTurnOnAds = 10f;
-        }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            bannerAds[0].DisableBanner();
-        }
     }
 }

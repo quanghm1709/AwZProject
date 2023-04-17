@@ -133,6 +133,7 @@ public class UIController : MonoBehaviour
 
     public void LoadMenu()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("Start Screen");
     }
 

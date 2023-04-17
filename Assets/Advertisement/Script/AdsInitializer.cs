@@ -31,20 +31,25 @@ public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener
         {
             Advertisement.Initialize(_gameId, _testMode, this);
         }
-    }
 
+    }
 
     public void OnInitializationComplete()
     {
         Debug.Log("Unity Ads initialization complete.");
 
+        LoadAds();     
+    }
+
+    private void LoadAds()
+    {
         //Load ads
         interstitialAd.LoadAd();
-        foreach(RewardedAdsButton btn in rewardedAdsButtons)
+        foreach (RewardedAdsButton btn in rewardedAdsButtons)
         {
             btn.LoadAd();
         }
-        foreach(BannerAd bannerAd in bannerAds)
+        foreach (BannerAd bannerAd in bannerAds)
         {
             bannerAd.LoadBanner();
         }

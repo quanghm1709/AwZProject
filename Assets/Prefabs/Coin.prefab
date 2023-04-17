@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4805018826803447120}
   - component: {fileID: 4805018826803447121}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 'shadow '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 4805018826877573165}
   - component: {fileID: 4805018826877573164}
   - component: {fileID: 2100569165305648757}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Coin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 4805018827568908322}
   - component: {fileID: 4805018827568908325}
   - component: {fileID: 4805018827568908323}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CoinImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
