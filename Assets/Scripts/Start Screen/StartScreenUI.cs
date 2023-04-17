@@ -25,6 +25,10 @@ public class StartScreenUI : MonoBehaviour
     [Header("Select Map")]
     [SerializeField] private GameObject mapCondition;
 
+    [Header("Shop")]
+    [SerializeField] private GameObject shopPanel;
+    [SerializeField] private GameObject watchAdsQ;
+
     private void Awake()
     {
         instance = this;
@@ -59,6 +63,30 @@ public class StartScreenUI : MonoBehaviour
             settingGroup.SetActive(true);
             startGroup.SetActive(false);
             gameTitle.SetActive(false);
+        }
+    }
+
+    public void ShopPanel()
+    {
+        if (shopPanel.activeInHierarchy)
+        {
+            shopPanel.SetActive(false);
+        }
+        else
+        {
+            shopPanel.SetActive(true);
+        }
+    }
+    
+    public void WatchAds()
+    {
+        if (watchAdsQ.activeInHierarchy)
+        {
+            watchAdsQ.SetActive(false);
+        }
+        else
+        {
+            watchAdsQ.SetActive(true);
         }
     }
 

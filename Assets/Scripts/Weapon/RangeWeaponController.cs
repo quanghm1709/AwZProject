@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,8 +9,6 @@ public class RangeWeaponController : WeaponController
     [SerializeField] public int atk;
     [SerializeField] private Transform firePoint;
     [SerializeField] private GameObject bullet;
-    [SerializeField] private float timeBtwAttack;
-    [SerializeField] public int maxBullet;
     [SerializeField] public float reloadTime;
 
     [Header("Effect")]
@@ -36,10 +35,17 @@ public class RangeWeaponController : WeaponController
         {
             if (canAttack && !isReload)
             {
-                if (Input.GetKeyDown(KeyCode.Space) || CrossPlatformInputManager.GetButtonDown("Fire"))
+                if (Input.GetKey(KeyCode.Space) || CrossPlatformInputManager.GetButton("Fire"))
                 {
-                    Instantiate(bullet, firePoint.position, firePoint.rotation);
-                    Instantiate(fireEft, dropBulletEff.position, dropBulletEff.rotation);
+                    //Instantiate(bullet, firePoint.position, firePoint.rotation);
+                    //Instantiate(fireEft, dropBulletEff.position, dropBulletEff.rotation);
+                    GameObject b = BulletPool.instance.bulletPool.GetObject(bullet.name);
+                    b.transform.position = firePoint.position;
+                    b.transform.rotation = firePoint.rotation;
+
+                    GameObject ef = BulletPool.instance.bulletPool.GetObject(fireEft.name);
+                    ef.transform.position = dropBulletEff.position;
+                    
                     timeBtwAtk = timeBtwAttack;
                     currentBullet -= 1;
                 }
@@ -82,9 +88,19 @@ public class RangeWeaponController : WeaponController
 
     public void UpdateWeap(UpdateChoice.UpdateWeap upData)
     {
-        maxBullet += (int)(maxBullet*upData.upAmmo);
-        reloadTime -= upData.upReload;
-        timeBtwAttack = upData.upFireRate;
-        bulletData.Updamage(upData.upDamage);
+        try
+        {
+            if (upData != null)
+            {
+                maxBullet += (int)(maxBullet * upData.upAmmo);
+                reloadTime -= upData.upReload;
+                timeBtwAtk = timeBtwAtk - timeBtwAtk * upData.upFireRate;
+                bulletData.Updamage(upData.upDamage);
+            }
+        }
+        catch(Exception e)
+        {
+            Debug.Log(e.Message);
+        }
     }
 }

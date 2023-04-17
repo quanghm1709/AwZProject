@@ -13,7 +13,8 @@ public class ItemPickup : MonoBehaviour
             if (item.isCoin)
             {
                 GameManager.instance.coin += item.coinAmount;
-                Destroy(gameObject);
+                gameObject.SetActive(false);
+                //Destroy(gameObject);
             }
         }
     }

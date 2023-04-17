@@ -6,9 +6,14 @@ using UnityEngine.UI;
 public class WeaponController : MonoBehaviour
 {
     [Header("Weapon Data")]
-    [SerializeField] public string weaponName;
-    [SerializeField] public int weapLv;
-    [SerializeField] private int damage;
-    [SerializeField] public Sprite weapUI;
-    
+    public string weaponName;
+    public int weapLv;
+    public int damage;
+    public Sprite weapUI;
+    public float timeBtwAttack;
+    public int maxBullet;
+    public float price;
+
+    //Update
+
 }

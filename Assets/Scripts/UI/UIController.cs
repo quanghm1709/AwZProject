@@ -11,6 +11,7 @@ public class UIController : MonoBehaviour
     [Header("Bar")]
     [SerializeField] public Slider hpBar;
     [SerializeField] public Button fire;
+    [SerializeField] public Text gold;
 
     [Header("Wave Notification")]
     [SerializeField] public Text nextWaveCd;
@@ -61,6 +62,7 @@ public class UIController : MonoBehaviour
         reload.maxValue = PlayerController.instance.currentWeap.reloadTime;
 
         currentGold.text = "Current Gold: " + GameManager.instance.coin;
+        gold.text = "Gold: " + GameManager.instance.coin;
 
         if (!updateScreen.activeInHierarchy)
         {
@@ -72,12 +74,22 @@ public class UIController : MonoBehaviour
         
     }
 
+    internal void ReContinue()
+    {
+        Debug.Log("Revive");
+        Time.timeScale = 1f;
+        deathScreen.SetActive(false);
+        GameObject.Find("Player")
+            .GetComponent<PlayerController>()
+            .Revive();
+    }
+
     public void GenerateUpdateCard(int k)
     {
         for(int i = 0; i < k; i++)
         {
             UpdateCard card = Instantiate(cardList[Random.Range(0, cardList.Length)]);
-            foreach(Transform child in UIController.instance.cardDisplay.transform)
+            foreach(Transform child in cardDisplay.transform)
             {
                 UpdateCard c = child.gameObject.GetComponent<UpdateCard>();
                 if (card.name == c.name)
@@ -121,6 +133,7 @@ public class UIController : MonoBehaviour
 
     public void LoadMenu()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("Start Screen");
     }
 

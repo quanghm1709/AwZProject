@@ -17,7 +17,7 @@ public class WaveSpawner : MonoBehaviour
 
     public static WaveSpawner instance;
 
-    [SerializeField] private Wave[] waves;
+    [SerializeField] private List<Wave> waves;
     private int nextWave = 0;
     [SerializeField] private float timeBtwWave = 5f;
     [SerializeField] private float waveCountdonw;
@@ -25,6 +25,7 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] private Transform[] spawnPoint;
 
     [SerializeField] private SpawnState state = SpawnState.COUNTING;
+    [SerializeField] private ObjectPool enemyPool;
 
     private void Awake()
     {
@@ -41,6 +42,7 @@ public class WaveSpawner : MonoBehaviour
         {
             if (!EnemyIsAlive())
             {
+                CreateNewWave(waves.Count);
                 WaveComplete();
             }
             else
@@ -52,7 +54,7 @@ public class WaveSpawner : MonoBehaviour
         if (waveCountdonw <= 0)
         {
             UIController.instance.updateScreen.SetActive(false);
-            if (nextWave >= waves.Length)
+            if (nextWave >= waves.Count)
             {
                 UIController.instance.nextWaveCd.gameObject.SetActive(true);
                 UIController.instance.nextWaveCd.text = "ALL WAVE COMPLETE!!";
@@ -64,11 +66,12 @@ public class WaveSpawner : MonoBehaviour
             {
                 StartCoroutine(SpawnWave(waves[nextWave]));
             }
+           
             //UIController.instance.notification.text = "Enemy Remaining: " + totalEnemy;
         }
         else
         {
-            if (nextWave >= waves.Length)
+            if (nextWave >= waves.Count)
             {
                 UIController.instance.nextWaveCd.gameObject.SetActive(true);
                 UIController.instance.nextWaveCd.text = "ALL WAVE COMPLETE!!";
@@ -89,7 +92,7 @@ public class WaveSpawner : MonoBehaviour
         UIController.instance.updateScreen.SetActive(true);
         UIController.instance.GenerateUpdateCard(3);
 
-        if (nextWave < waves.Length)
+        if (nextWave < waves.Count)
         {
             nextWave++;
         }
@@ -136,8 +139,22 @@ public class WaveSpawner : MonoBehaviour
     public void SpawnEnemy(Transform _enemy)
     {
         Transform spawnpoint = spawnPoint[Random.Range(0, spawnPoint.Length)];
-        Instantiate(_enemy, spawnpoint.position, spawnpoint.rotation);
-
+        //Instantiate(_enemy, spawnpoint.position, spawnpoint.rotation);
+        GameObject enemy = enemyPool.GetObject("Normal Zombie");
+        enemy.GetComponent<EnemyController>().Reset();
+        enemy.transform.position = spawnpoint.position;
         //Debug.Log("Spawning Enemy: " + _enemy.name);
+    }
+
+    private void CreateNewWave(int i)
+    {
+        Wave wave = new Wave
+        {
+            name = i.ToString(),
+            enemy = waves[0].enemy,
+            count = 3 + 2 * i,
+            rate = 3
+        };
+        waves.Add(wave);
     }
 }
