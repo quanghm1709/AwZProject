@@ -16,6 +16,7 @@ public class HomeAdsReward : RewardedAdsButton
         StartCoroutine(WaitForNextAds());
     }
 
+    
 
     private IEnumerator WaitForNextAds()
     {
