@@ -89,7 +89,7 @@ public class UIController : MonoBehaviour
 
     internal void ReContinue()
     {
-        Debug.Log("Revive");
+        
         Time.timeScale = 1f;
         deathScreen.SetActive(false);
         GameObject.Find("Player")

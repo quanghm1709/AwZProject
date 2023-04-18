@@ -9,7 +9,6 @@ public class DamagePopup : MonoBehaviour
     [SerializeField] private float showSpd;
     private float lifeTime = 1f;
 
-
     private void Update()
     {
         transform.position += new Vector3(0, showSpd) * Time.deltaTime;

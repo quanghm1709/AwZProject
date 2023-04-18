@@ -243,7 +243,7 @@ public class PlayerController : MonoBehaviour
             if(raycast.collider != null)
             {
                 dashPos = raycast.point;
-                Debug.Log(raycast);
+               
             }
 
             rb.MovePosition(dashPos);
@@ -265,8 +265,7 @@ public class PlayerController : MonoBehaviour
             currentWeap = weap;
             for(int i=0; i< hand.transform.childCount; i++)
             {
-                Debug.Log(hand.transform.GetChild(i).gameObject.name);
-                Debug.Log(weapon.weaponName);
+               
                 if (!hand.transform.GetChild(i).gameObject.name.Contains(weapon.weaponName)  )
                 {
                     hand.transform.GetChild(i).gameObject.SetActive(false);

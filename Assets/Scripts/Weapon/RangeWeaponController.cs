@@ -95,7 +95,7 @@ public class RangeWeaponController : WeaponController
         }
         else if(magazine<0)
         {
-            Debug.Log(magazine);
+            
             PlayerController.instance.SwapWeap(null);
             Destroy(this.gameObject);
         }

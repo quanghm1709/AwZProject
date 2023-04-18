@@ -63,6 +63,16 @@ public class EnemyController : MonoBehaviour
         if(currentHp <= 0)
         {
             GameObject g = goldPool.GetComponent<ObjectPool>().GetObject(itemToDrop[0].name);
+            int a = Random.RandomRange(1, 100);
+            int b = Random.RandomRange(0, 2);
+            if (a > 0)
+            {
+                GameObject Gun = Instantiate<GameObject>(WeaponManager.DropGunBase);
+                Gun.GetComponent<Item>().itemName = GameManager.instance.player_magazine[b].gun_name;
+                Gun.transform.position = transform.position;
+                Gun.transform.GetChild(1).GetChild(0).GetComponent<SpriteRenderer>().sprite = GameObject.Find("Weapon Manager").GetComponent<WeaponManager>().GetImage(Gun.GetComponent<Item>().itemName).weapUI;
+            }
+
             g.transform.position = transform.position;
             anim.SetBool("isDead", true);
             StartCoroutine(OnDead());
