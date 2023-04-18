@@ -22371,6 +22371,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1539260432, guid: 10d039db4a6f02540b5a2fdda5e128a3, type: 3}
+      propertyPath: zonePhaseDuration
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 6044853370490204192, guid: 10d039db4a6f02540b5a2fdda5e128a3, type: 3}
       propertyPath: _showAdButton
       value: 

@@ -48,6 +48,7 @@ public class RangeWeaponController : WeaponController
                         GameObject b = BulletPool.instance.bulletPool.GetObject(bullet.name);
                         b.transform.position = firePoint.position;
                         b.transform.rotation = firePoint.rotation;
+                        b.GetComponent<BulletController>().Setup(damage);
 
                         GameObject ef = BulletPool.instance.bulletPool.GetObject(fireEft.name);
                         ef.transform.position = dropBulletEff.position;
