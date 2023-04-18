@@ -25,7 +25,7 @@ public class UseGun : MonoBehaviour
             GameObject.Find("Weapon Manager").GetComponent<WeaponManager>().Equip(gun_name);
             PlayerController.instance.SwapWeap(GameManager.instance.weapon);
             GameManager.instance.magazine_stored[gun_name]--;
-            Debug.Log("Get gun success");
+            
         }
     }
 
