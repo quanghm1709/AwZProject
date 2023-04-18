@@ -41,11 +41,24 @@ public class UIController : MonoBehaviour
     [Header("Dash")]
     [SerializeField] public Slider dashCD;
 
+    [Header("Gun")]
+    [SerializeField] public Transform GunBtnGroup;
+    [SerializeField] public GameObject ChangeGun;
     private void Awake()
     {
         instance = this;
     }
 
+    private void Start()
+    {
+        foreach(string i in GameManager.instance.magazine_stored.Keys)
+        {
+            GameObject Gun =  Instantiate(ChangeGun, GunBtnGroup.transform.position,Quaternion.identity, GunBtnGroup);
+            Gun.name = i;
+            Gun.transform.GetChild(1).GetComponent<Image>().sprite =  GameObject.Find("Weapon Manager").GetComponent<WeaponManager>().GetImage(i).weapUI;
+            //Gun.transform.position = GunBtnGroup.transform.position;
+        }
+    }
     private void Update()
     {
         multiEnemy = GameObject.FindGameObjectsWithTag("Enemy");
@@ -63,7 +76,7 @@ public class UIController : MonoBehaviour
 
         currentGold.text = "Current Gold: " + GameManager.instance.coin;
         gold.text = "Gold: " + GameManager.instance.coin;
-
+        
         if (!updateScreen.activeInHierarchy)
         {
             foreach (Transform child in UIController.instance.cardDisplay.transform)
