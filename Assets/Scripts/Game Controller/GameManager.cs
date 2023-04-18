@@ -17,7 +17,6 @@ public class GameManager : MonoBehaviour
     public Dictionary<string, int> magazine_stored = new Dictionary<string, int>();
     public WeaponController weapon;
 
-
     [Serializable]
     public struct Dictionary_magazine
     {
@@ -46,7 +45,7 @@ public class GameManager : MonoBehaviour
         {
             magazine_stored.Add(i.gun_name,i.gun_magazine);
         }
-        Debug.Log(magazine_stored);
+        
         if (this == null)
         {
             Destroy(gameObject);
