@@ -1,14 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
     [Header("Enemy Data Core")]
-    [SerializeField] public int level;
-    [SerializeField] public int maxHp;
-    [SerializeField] public float maxSpeed;
-    [HideInInspector] public int currentHp;
+    public int level;
+    public int maxHp;
+    public float maxSpeed;
+    public int currentHp;
+    public int maxAtk;
+    public float damageRange;
+    public float timeBtwAttack;
+    public int currentAtk;
+    public float timeBtwAtk;
+    public bool canAttack;
+
     [HideInInspector] public float currentSpeed;
     [SerializeField] public bool canMove = true;
 
@@ -16,7 +25,36 @@ public class EnemyController : MonoBehaviour
     [SerializeField] public Rigidbody2D rb;
     [SerializeField] public Animator anim;
     [SerializeField] private GameObject[] itemToDrop;
+    [SerializeField] protected NavMeshAgent agent;
+    [SerializeField] protected Transform attackPoint;
+    [SerializeField] protected float attackRange;
 
+    [Header("UI")]
+    [SerializeField] protected Slider hpBar;
+
+    private void Start()
+    {
+        currentAtk = maxAtk;
+        timeBtwAtk = timeBtwAttack;
+
+        currentHp = maxHp;
+        currentSpeed = maxSpeed;
+
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
+    }
+
+    private void Update()
+    {
+        Move();
+
+        Flip();
+
+        Attack();
+
+        UpdateHpUI();
+    }
+    
     public void GetDamage(int damage)
     {
         GameObject goldPool = GameObject.Find("Gold Pool");
@@ -36,18 +74,24 @@ public class EnemyController : MonoBehaviour
 
     }
 
-    protected IEnumerator GetHit()
+    protected void UpdateHpUI()
     {
-        transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.red;
-        yield return new WaitForSeconds(.1f);
-        transform.GetChild(0).GetComponent<SpriteRenderer>().color = new Color(.54f,1,.67f,1);
+        hpBar.maxValue = maxHp;
+        hpBar.value = currentHp;
+    }
+
+    protected virtual IEnumerator GetHit()
+    {
+        yield return 0;
     }
 
     protected IEnumerator OnDead()
     {
+        agent.isStopped = true;
         yield return new WaitForSeconds(2f);
         gameObject.SetActive(false);
     }
+
     public void Flip()
     {
         if(PlayerController.instance.transform.position.x > transform.position.x)
@@ -59,9 +103,33 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    protected virtual void Attack(){ }
+
+    protected void Move()
+    {
+        if (canMove)
+        {
+            agent.SetDestination(PlayerController.instance.transform.position);
+            agent.speed = currentSpeed;
+            agent.isStopped = false;
+        }
+        else
+        {
+            agent.speed = 0;
+            agent.isStopped = true;
+            agent.velocity = Vector3.zero;
+        }
+    }
     public void Reset()
     {
         currentHp = maxHp;
+        agent.isStopped = false;
         anim.SetBool("isDead", false);
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 }

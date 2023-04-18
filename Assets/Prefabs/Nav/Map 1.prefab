@@ -6103,19 +6103,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - name: 1
-    enemy: {fileID: 8213410352679479279, guid: 42bb54cba4de5ce44877a3c02753d639, type: 3}
+    enemy:
+    - {fileID: 8213410352679479279, guid: 42bb54cba4de5ce44877a3c02753d639, type: 3}
+    - {fileID: 553818184155688279, guid: 31caabd196a678b4a9edb36bf546ff70, type: 3}
     count: 10
     rate: 1
   - name: 2
-    enemy: {fileID: 8213410352679479279, guid: 42bb54cba4de5ce44877a3c02753d639, type: 3}
+    enemy:
+    - {fileID: 8213410352679479279, guid: 42bb54cba4de5ce44877a3c02753d639, type: 3}
+    - {fileID: 553818184155688279, guid: 31caabd196a678b4a9edb36bf546ff70, type: 3}
     count: 13
     rate: 3
   - name: 3
-    enemy: {fileID: 8213410352679479279, guid: 42bb54cba4de5ce44877a3c02753d639, type: 3}
+    enemy:
+    - {fileID: 8213410352679479279, guid: 42bb54cba4de5ce44877a3c02753d639, type: 3}
+    - {fileID: 553818184155688279, guid: 31caabd196a678b4a9edb36bf546ff70, type: 3}
     count: 15
     rate: 3
   - name: 4
-    enemy: {fileID: 8213410352679479279, guid: 42bb54cba4de5ce44877a3c02753d639, type: 3}
+    enemy:
+    - {fileID: 8213410352679479279, guid: 42bb54cba4de5ce44877a3c02753d639, type: 3}
+    - {fileID: 553818184155688279, guid: 31caabd196a678b4a9edb36bf546ff70, type: 3}
     count: 17
     rate: 3
   timeBtwWave: 5
