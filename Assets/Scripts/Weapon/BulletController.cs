@@ -54,4 +54,9 @@ public class BulletController : MonoBehaviour
         g.transform.position = position;
         g.GetComponent<DamagePopup>().Setup(atk);
     }
+
+    public void Setup(int damage)
+    {
+        this.damage = damage;
+    }
 }

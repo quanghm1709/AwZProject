@@ -11350,16 +11350,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 741941c20b6b29f46b75b648c6e8ae18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
 --- !u!1 &1762604908
 GameObject:
   m_ObjectHideFlags: 0
@@ -22267,6 +22257,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1539260432, guid: 10d039db4a6f02540b5a2fdda5e128a3, type: 3}
+      propertyPath: zonePhaseDuration
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 6044853370490204192, guid: 10d039db4a6f02540b5a2fdda5e128a3, type: 3}
       propertyPath: _showAdButton
       value: 

@@ -5,14 +5,10 @@ using TMPro;
 
 public class DamagePopup : MonoBehaviour
 {
-    private TextMeshPro dmgShow;
+    [SerializeField] private TextMeshPro dmgShow;
     [SerializeField] private float showSpd;
     private float lifeTime = 1f;
 
-    private void Start()
-    {
-        dmgShow = GetComponent<TextMeshPro>();       
-    }
 
     private void Update()
     {
