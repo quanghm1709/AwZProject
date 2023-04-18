@@ -261,9 +261,17 @@ public class PlayerController : MonoBehaviour
             weap.transform.position = hand.position;
             weap.transform.localRotation = Quaternion.Euler(Vector3.zero);
             weap.transform.localScale = Vector3.one;
-
+            
             currentWeap = weap;
-            hand.transform.GetChild(0).gameObject.SetActive(false);
+            for(int i=0; i< hand.transform.childCount; i++)
+            {
+                Debug.Log(hand.transform.GetChild(i).gameObject.name);
+                Debug.Log(weapon.weaponName);
+                if (!hand.transform.GetChild(i).gameObject.name.Contains(weapon.weaponName)  )
+                {
+                    hand.transform.GetChild(i).gameObject.SetActive(false);
+                } 
+            }
         }
         else
         {
@@ -275,21 +283,8 @@ public class PlayerController : MonoBehaviour
         //currentWeap = hand.GetComponentInChildren<RangeWeaponController>();
     }
 
-    public void Equip1()
-    {
-        GameObject.Find("Weapon Manager").GetComponent<WeaponManager>().Equip("G Sniper");
-        PlayerController.instance.SwapWeap(GameManager.instance.weapon);
-    }
+    
 
-    public void Equip2()
-    {
-
-    }
-
-    public void Equip3()
-    {
-
-    }
 
     public void UpdateStats(UpdateChoice.UpdatePlayer upStats)
     {
