@@ -24,6 +24,9 @@ public class EnemyController : MonoBehaviour
         currentHp -= damage;
         if(currentHp <= 0)
         {
+            int a = Random.RandomRange(1,100);
+
+            Debug.Log(a);
             GameObject g = goldPool.GetComponent<ObjectPool>().GetObject(itemToDrop[0].name);
             g.transform.position = transform.position;
             anim.SetBool("isDead", true);
