@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour
     [Header("Resource")]
     [SerializeField] public int coin;
     [SerializeField] public int playerGold;
-
     [Header("Map")]
     [SerializeField] public bool[] isUnlockMap;
     [SerializeField] public int mapToInstatiate;
