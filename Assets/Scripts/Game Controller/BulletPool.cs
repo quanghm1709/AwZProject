@@ -8,6 +8,7 @@ public class BulletPool : MonoBehaviour
 
     public ObjectPool bulletPool;
     public ObjectPool effectPool;
+    public ObjectPool enemyBulletPool;
 
     private void Start()
     {
