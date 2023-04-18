@@ -31,4 +31,18 @@ public class WeaponManager : MonoBehaviour
         }
         //weapUIs[pos].Equip();
     }
+
+    public WeaponController GetImage(string name)
+    {
+        WeaponController a = new WeaponController();
+        foreach (WeaponController weap in weapons)
+        {
+            if (weap.weaponName.Equals(name))
+            {
+                a = weap; 
+                return a;
+            }
+        }
+        return a;
+    }
 }
