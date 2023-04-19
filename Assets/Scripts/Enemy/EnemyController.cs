@@ -62,6 +62,7 @@ public class EnemyController : MonoBehaviour
         currentHp -= damage;
         if(currentHp <= 0)
         {
+           
             GameObject g = goldPool.GetComponent<ObjectPool>().GetObject(itemToDrop[0].name);
             int a = Random.RandomRange(1, 100);
             int b = Random.RandomRange(0, 2);

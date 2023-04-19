@@ -232,6 +232,7 @@ MonoBehaviour:
   knockTime: 1
   rb: {fileID: -963120413967003963}
   hitEft: {fileID: 7108573865688705729, guid: 11f087450bbd89c4cb724102e26c7cd7, type: 3}
+  type: 3
 --- !u!1 &8412013647491278997
 GameObject:
   m_ObjectHideFlags: 0
