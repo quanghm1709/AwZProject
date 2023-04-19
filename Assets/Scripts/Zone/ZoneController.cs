@@ -33,14 +33,19 @@ public class ZoneController : MonoBehaviour
                 {
                     ContinueCount();
                 }
-                circle.radius -= Time.deltaTime / 5;
+                if(circle.radius > 13)
+                {
+                    circle.radius -= Time.deltaTime / 5;
+                    sprite.transform.localScale = new Vector3(circle.radius - 16, circle.radius - 16, transform.localScale.z);
+                }
+
                 //if (size > 1)
                 //{
                 //    size -= Time.deltaTime / 5;
                 //    sprite.transform.localScale = new Vector3(size-3, size-3, transform.localScale.z);
                 //}
-                
-                
+
+
             }
             else
             {
@@ -49,13 +54,6 @@ public class ZoneController : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-
-        //float distance = Vector3.Distance(transform.position, PlayerController.instance.transform.position);
-        ////Debug.Log(distance + " " + size);
-        //if (distance <= size / 2)
-        //{
-        //    ContinueCount();
-        //}
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
