@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4703111124913303225}
   - component: {fileID: 4703111124913303224}
-  m_Layer: 0
+  - component: {fileID: 3928832696549582090}
+  m_Layer: 6
   m_Name: Zone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,8 +47,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 4703111125207553823}
-  size: 3
+  size: 6
   duration: 4
+  countToGetReward: 5
+  circle: {fileID: 3928832696549582090}
+--- !u!58 &3928832696549582090
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4703111124913303227}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 1}
+  serializedVersion: 2
+  m_Radius: 19.3
 --- !u!1 &4703111125207553823
 GameObject:
   m_ObjectHideFlags: 0
@@ -58,7 +77,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4703111125207553821}
   - component: {fileID: 4703111125207553820}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Untitled-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

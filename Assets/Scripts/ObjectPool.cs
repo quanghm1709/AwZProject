@@ -29,7 +29,6 @@ public class ObjectPool : MonoBehaviour
 
     public GameObject GetObject(string name)
     {
-        //Debug.Log("Pool: " + name);
         for (int i = 0; i < pooledGobjects.Count; ++i)
         {
             if (!pooledGobjects[i].activeSelf && pooledGobjects[i].name.Equals(name + "(Clone)"))
