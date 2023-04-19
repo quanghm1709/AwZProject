@@ -17,28 +17,32 @@ public class PlayerBullet : BulletController
             {
                 case bulletType.BURN:
                     {
+                        Burn_Bullet(other);
                         break;
                     }
                 case bulletType.PIERCE:
                     {
+                        Pierce(other);
                         break;
                     }
                 case bulletType.SUPER_PIERCE:
                     {
+                        Super_Pierce(other);
                         break;
                     }
                 case bulletType.SLOW:
                     {
-                        //Slow_Bullet(other);
-                        StartCoroutine(DelayedEvent(2));
+                        Slow_Bullet(other);
                         break;
                     }
                 case bulletType.BLOW:
                     {
+                        Blow(other);
                         break;
                     }
                 case bulletType.RADIATE:
                     {
+                        Radiate(other);
                         break;
                     }
                 case bulletType.NORMAL:
@@ -78,10 +82,35 @@ public class PlayerBullet : BulletController
 
     void Slow_Bullet(Collider2D other)
     {
-        //Debug.Log("a");
-        //StartCoroutine(DelayedEvent(10));
-        //Debug.Log("b");
+        
     }
+
+    void Burn_Bullet(Collider2D other)
+    {
+       
+    }
+
+    void Pierce(Collider2D other)
+    {
+
+    }
+
+    void Super_Pierce(Collider2D other)
+    {
+
+    }
+
+    void Radiate(Collider2D other)
+    {
+
+    }
+
+    void Blow(Collider2D other)
+    {
+
+    }
+
+
 
     IEnumerator DelayedEvent(int timedelay)
     {
