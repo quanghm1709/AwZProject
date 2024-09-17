@@ -243,7 +243,7 @@ public class PlayerController : MonoBehaviour
             if(raycast.collider != null)
             {
                 dashPos = raycast.point;
-                Debug.Log(raycast);
+               
             }
 
             rb.MovePosition(dashPos);
@@ -254,15 +254,23 @@ public class PlayerController : MonoBehaviour
 
     public void SwapWeap(WeaponController weapon)
     {
-        if (GameManager.instance.weapon != null)
+        if (weapon != null)
         {
             RangeWeaponController weap = (RangeWeaponController)Instantiate(weapon);
             weap.transform.parent = hand;
             weap.transform.position = hand.position;
             weap.transform.localRotation = Quaternion.Euler(Vector3.zero);
             weap.transform.localScale = Vector3.one;
-
+            
             currentWeap = weap;
+            for(int i=0; i< hand.transform.childCount; i++)
+            {
+               
+                if (!hand.transform.GetChild(i).gameObject.name.Contains(weapon.weaponName)  )
+                {
+                    hand.transform.GetChild(i).gameObject.SetActive(false);
+                } 
+            }
         }
         else
         {
@@ -273,6 +281,9 @@ public class PlayerController : MonoBehaviour
 
         //currentWeap = hand.GetComponentInChildren<RangeWeaponController>();
     }
+
+    
+
 
     public void UpdateStats(UpdateChoice.UpdatePlayer upStats)
     {

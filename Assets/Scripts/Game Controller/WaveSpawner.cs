@@ -10,7 +10,7 @@ public class WaveSpawner : MonoBehaviour
     public class Wave
     {
         public string name;
-        public MeleeEnemy enemy;
+        public EnemyController[] enemy;
         public int count;
         public float rate;
     }
@@ -126,7 +126,7 @@ public class WaveSpawner : MonoBehaviour
         UIController.instance.currentWave.text = "Wave: " + _wave.name;
         for (int i = 0; i < _wave.count; i++)
         {
-            SpawnEnemy(_wave.enemy.transform);
+            SpawnEnemy(_wave.enemy[Random.Range(0,_wave.enemy.Length)].transform);
             yield return new WaitForSeconds(1f / _wave.rate);
             
             //UIController.instance.notification.text = "Remaining Enemy: " + (_wave.count - i);
@@ -140,7 +140,7 @@ public class WaveSpawner : MonoBehaviour
     {
         Transform spawnpoint = spawnPoint[Random.Range(0, spawnPoint.Length)];
         //Instantiate(_enemy, spawnpoint.position, spawnpoint.rotation);
-        GameObject enemy = enemyPool.GetObject("Normal Zombie");
+        GameObject enemy = enemyPool.GetObject(_enemy.gameObject.name);
         enemy.GetComponent<EnemyController>().Reset();
         enemy.transform.position = spawnpoint.position;
         //Debug.Log("Spawning Enemy: " + _enemy.name);

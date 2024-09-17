@@ -6,13 +6,19 @@ public class WeaponManager : MonoBehaviour
 {
     [SerializeField] private List<WeaponController> weapons;
     [SerializeField] private List<WeapUIData> weapUIs;
+    [SerializeField] public GameObject DropGun; 
+
+    [SerializeField] public static GameObject DropGunBase ; 
+
 
     private void Start()
     {
-        foreach(WeaponController weap in weapons)
+        DropGunBase = DropGun; 
+        foreach (WeaponController weap in weapons)
         {
             weapUIs[weapons.IndexOf(weap)].Show(weap.weapUI, weap.weaponName, weap.damage, weap.timeBtwAttack, weap.maxBullet, weap.price);
         }
+        DontDestroyOnLoad(this.gameObject);
     }
 
     public void Equip(string name)
@@ -29,5 +35,19 @@ public class WeaponManager : MonoBehaviour
             }
         }
         //weapUIs[pos].Equip();
+    }
+
+    public WeaponController GetImage(string name)
+    {
+        WeaponController a = new WeaponController();
+        foreach (WeaponController weap in weapons)
+        {
+            if (weap.weaponName.Equals(name))
+            {
+                a = weap; 
+                return a;
+            }
+        }
+        return a;
     }
 }

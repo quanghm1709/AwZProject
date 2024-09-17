@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    [SerializeField] private string itemName;
+    [SerializeField] public string itemName;
     [SerializeField] public bool isCoin;
+    [SerializeField] public bool isGun;
     [SerializeField] public int coinAmount;
 
     [System.Serializable]

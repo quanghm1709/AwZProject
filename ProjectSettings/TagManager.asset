@@ -52,3 +52,6 @@ TagManager:
   - name: Effect
     uniqueID: 3069229947
     locked: 0
+  - name: WUI
+    uniqueID: 3700281799
+    locked: 0

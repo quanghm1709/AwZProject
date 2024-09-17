@@ -16,6 +16,11 @@ public class ItemPickup : MonoBehaviour
                 gameObject.SetActive(false);
                 //Destroy(gameObject);
             }
+            if (item.isGun)
+            {
+                GameManager.instance.magazine_stored[item.itemName]++;
+                gameObject.SetActive(false);
+            }
         }
     }
 }
