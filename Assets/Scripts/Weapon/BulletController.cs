@@ -25,7 +25,7 @@ public class BulletController : MonoBehaviour
 
     void Update()
     {     
-        rb.velocity = transform.right * speed;
+        rb.linearVelocity = transform.right * speed;
         lifeTime -= Time.deltaTime;
 
         if (lifeTime <= 0)

@@ -129,7 +129,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         //rb.velocity = moveInput * currentSpeed;
-        rb.velocity = new Vector2(dirX, dirY);
+        rb.linearVelocity = new Vector2(dirX, dirY);
         if (closetEnemy != null)
         {
             Vector2 lookDir = closetEnemy.position - transform.position;
