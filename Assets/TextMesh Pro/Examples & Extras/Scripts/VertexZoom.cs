@@ -71,7 +71,7 @@ namespace TMPro.Examples
 
             while (true)
             {
-                // Allocate new vertices 
+                // Allocate new vertices
                 if (hasTextChanged)
                 {
                     // Get updated vertex data
@@ -130,7 +130,7 @@ namespace TMPro.Examples
 
                     // Determine the random scale change for each character.
                     float randomScale = Random.Range(1f, 1.5f);
-                    
+
                     // Add modified scale and index
                     modifiedCharScale.Add(randomScale);
                     scaleSortingOrder.Add(modifiedCharScale.Count - 1);
@@ -149,6 +149,14 @@ namespace TMPro.Examples
                     destinationVertices[vertexIndex + 2] += offset;
                     destinationVertices[vertexIndex + 3] += offset;
 
+                    // Restore Source UVS which have been modified by the sorting
+                    Vector4[] sourceUVs0 = cachedMeshInfoVertexData[materialIndex].uvs0;
+                    Vector4[] destinationUVs0 = textInfo.meshInfo[materialIndex].uvs0;
+
+                    destinationUVs0[vertexIndex + 0] = sourceUVs0[vertexIndex + 0];
+                    destinationUVs0[vertexIndex + 1] = sourceUVs0[vertexIndex + 1];
+                    destinationUVs0[vertexIndex + 2] = sourceUVs0[vertexIndex + 2];
+                    destinationUVs0[vertexIndex + 3] = sourceUVs0[vertexIndex + 3];
 
                     // Restore Source Vertex Colors
                     Color32[] sourceColors32 = cachedMeshInfoVertexData[materialIndex].colors32;
@@ -170,7 +178,7 @@ namespace TMPro.Examples
 
                     // Updated modified vertex attributes
                     textInfo.meshInfo[i].mesh.vertices = textInfo.meshInfo[i].vertices;
-
+                    textInfo.meshInfo[i].mesh.SetUVs(0, textInfo.meshInfo[i].uvs0);
                     textInfo.meshInfo[i].mesh.colors32 = textInfo.meshInfo[i].colors32;
 
                     m_TextComponent.UpdateGeometry(textInfo.meshInfo[i].mesh, i);
