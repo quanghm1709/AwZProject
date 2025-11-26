@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638997478545186949
-    m_Hash: 3806760490
+      ticks: 638997492947381888
+    m_Hash: 1522661760
   m_LockFileStatus:
     m_FilePath: D:/Quang/awz/AwZProject/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638997478681342900
-    m_Hash: 116229176
+      ticks: 638997492947381888
+    m_Hash: 3320260774
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
