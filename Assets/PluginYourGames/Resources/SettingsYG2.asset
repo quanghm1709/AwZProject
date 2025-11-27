@@ -12,6 +12,166 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efa747916aa66674d96ea40ca8a480b2, type: 3}
   m_Name: SettingsYG2
   m_EditorClassIdentifier: Assembly-CSharp::YG.InfoYG
+  Authorization:
+    playerPhotoSize: 1
+    authorized: 1
+    playerName: Player current
+    uniqueID: 000
+    playerPhoto: demo image
+    payingStatus: 0
+  AutoTranslateLangs:
+    domainAutoLocalization: com
+    languages:
+      ru: 1
+      en: 1
+      tr: 0
+      az: 0
+      be: 0
+      he: 0
+      hy: 0
+      ka: 0
+      et: 0
+      fr: 0
+      kk: 0
+      ky: 0
+      lt: 0
+      lv: 0
+      ro: 0
+      tg: 0
+      tk: 0
+      uk: 0
+      uz: 0
+      es: 0
+      pt: 0
+      ar: 0
+      id: 0
+      ja: 0
+      it: 0
+      de: 0
+      hi: 0
+    fonts:
+      defaultFont: []
+      ru: []
+      en: []
+      tr: []
+      az: []
+      be: []
+      he: []
+      hy: []
+      ka: []
+      et: []
+      fr: []
+      kk: []
+      ky: []
+      lt: []
+      lv: []
+      ro: []
+      tg: []
+      tk: []
+      uk: []
+      uz: []
+      es: []
+      pt: []
+      ar: []
+      id: []
+      ja: []
+      it: []
+      de: []
+      hi: []
+    fontsTMP:
+      defaultFont: []
+      ru: []
+      en: []
+      tr: []
+      az: []
+      be: []
+      he: []
+      hy: []
+      ka: []
+      et: []
+      fr: []
+      kk: []
+      ky: []
+      lt: []
+      lv: []
+      ro: []
+      tg: []
+      tk: []
+      uk: []
+      uz: []
+      es: []
+      pt: []
+      ar: []
+      id: []
+      ja: []
+      it: []
+      de: []
+      hi: []
+    fontsSizeCorrect:
+      ru: 
+      en: 
+      tr: 
+      az: 
+      be: 
+      he: 
+      hy: 
+      ka: 
+      et: 
+      fr: 
+      kk: 
+      ky: 
+      lt: 
+      lv: 
+      ro: 
+      tg: 
+      tk: 
+      uk: 
+      uz: 
+      es: 
+      pt: 
+      ar: 
+      id: 
+      ja: 
+      it: 
+      de: 
+      hi: 
+  Localization:
+    setLanguageMod: 1
+  Payments:
+    durationPayPanel: 1
+    testBuyFail: 0
+    purshases:
+    - id: gun
+      title: Gun
+      description: Product - Gun
+      imageURI: demo image
+      price: 5 YAN
+      priceValue: 5
+      priceCurrencyCode: YAN
+      currencyImageURL: https://yastatic.net/s3/games-static/static-data/images/payments/sdk/currency-icon-s@2x.png
+      consumed: 1
+    - id: armor
+      title: Armor
+      description: Product - Armor
+      imageURI: demo image
+      price: 10 YAN
+      priceValue: 10
+      priceCurrencyCode: YAN
+      currencyImageURL: https://yastatic.net/s3/games-static/static-data/images/payments/sdk/currency-icon-s@2x.png
+      consumed: 1
+    - id: grenade
+      title: Grenade
+      description: Product - Grenade
+      imageURI: demo image
+      price: 30 YAN
+      priceValue: 30
+      priceCurrencyCode: YAN
+      currencyImageURL: https://yastatic.net/s3/games-static/static-data/images/payments/sdk/currency-icon-s@2x.png
+      consumed: 1
+  Storage:
+    saveLocal: 0
+    saveCloud: 1
+    flush: 0
   Basic:
     platform: {fileID: 11400000, guid: fabe82a4ab034324eb452cc7109f6d19, type: 2}
     autoApplySettings: 1
@@ -65,6 +225,9 @@ MonoBehaviour:
   platformInfo:
     ownHost: 0
   platformToggles:
+    setLanguageMod: 0
+    saveLocal: 0
+    saveCloud: 0
     autoPauseGame: 0
     selectWebGLTemplate: 1
     runInBackground: 1

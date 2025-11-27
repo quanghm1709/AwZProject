@@ -10,7 +10,6 @@ public class PlayerBullet : BulletController
 
     protected override void Damage(Collider2D other)
     {
-        
         if (other.tag == "Enemy")
         {
             switch (type)
@@ -63,6 +62,8 @@ public class PlayerBullet : BulletController
 
     void Normal_Bullet(Collider2D other)
     {
+        Debug.LogError(other.gameObject.name);
+
         Rigidbody2D enemy = other.GetComponent<Rigidbody2D>();
 
         if (other.GetComponent<EnemyController>().currentHp > 1)

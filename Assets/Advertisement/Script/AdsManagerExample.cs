@@ -8,7 +8,7 @@ public class AdsManagerExample : AdsInitializer
 
     private void Start()
     {
-        rewardedAdsButtons[0].enabled = false;
+       // rewardedAdsButtons[0].enabled = false;
     }
 
     private void Update()
