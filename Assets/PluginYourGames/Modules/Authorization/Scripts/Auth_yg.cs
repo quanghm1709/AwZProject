@@ -19,7 +19,7 @@ namespace YG
         }
 
         [InitYG_2]
-        private static void InitAuth()
+        internal static void InitAuth()
         {
 #if UNITY_EDITOR
             InitPlayerForEditor();

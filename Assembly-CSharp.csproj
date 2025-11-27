@@ -96,6 +96,7 @@
     <Compile Include="Assets\Scripts\ObjectPool.cs" />
     <Compile Include="Assets\PluginYourGames\Modules\Localization\Scripts\Lang_yg.cs" />
     <Compile Include="Assets\PluginYourGames\Modules\Storage\Scripts\Storage_info.cs" />
+    <Compile Include="Assets\Scripts\Singleton.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
     <Compile Include="Assets\PluginYourGames\Scripts\Platform\PlatformSettings.cs" />
