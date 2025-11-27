@@ -46,6 +46,6 @@ public class RangeEnemy : EnemyController
     {
         transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.red;
         yield return new WaitForSeconds(.1f);
-        transform.GetChild(0).GetComponent<SpriteRenderer>().color = new Color(.915f, .89f, .565f, 1);
+        transform.GetChild(0).GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
     }
 }

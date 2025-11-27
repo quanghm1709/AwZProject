@@ -45,6 +45,6 @@ public class MeleeEnemy : EnemyController
     {
         transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.red;
         yield return new WaitForSeconds(.1f);
-        transform.GetChild(0).GetComponent<SpriteRenderer>().color = new Color(.54f, 1, .67f, 1);
+        transform.GetChild(0).GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
     }
 }

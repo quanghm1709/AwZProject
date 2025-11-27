@@ -42,6 +42,9 @@ public class EnemyController : MonoBehaviour
 
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+
+        transform.rotation = Quaternion.Euler(Vector3.zero);
+        transform.GetChild(0).rotation = Quaternion.Euler(Vector3.zero);
     }
 
     private void Update()
@@ -99,6 +102,7 @@ public class EnemyController : MonoBehaviour
     protected IEnumerator OnDead()
     {
         agent.isStopped = true;
+        agent.SetDestination(transform.position);
         yield return new WaitForSeconds(2f);
         gameObject.SetActive(false);
     }
