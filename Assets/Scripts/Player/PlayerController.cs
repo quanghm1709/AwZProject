@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityStandardAssets.CrossPlatformInput;
 using UnityEngine.UI;
 using System;
 
@@ -69,8 +68,8 @@ public class PlayerController : MonoBehaviour
         //moveInput.x = Input.GetAxisRaw("Horizontal");
         //moveInput.y = Input.GetAxisRaw("Vertical");
 
-        dirX = CrossPlatformInputManager.GetAxisRaw("Horizontal") * currentSpeed;
-        dirY = CrossPlatformInputManager.GetAxisRaw("Vertical") * currentSpeed;
+        dirX = Input.GetAxisRaw("Horizontal") * currentSpeed;
+        dirY = Input.GetAxisRaw("Vertical") * currentSpeed;
         moveInput = new Vector3(dirX, dirY).normalized;
 
         if (dirX != 0 || dirY != 0)
@@ -82,7 +81,7 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("isMove", false);
         }
 
-        if (CrossPlatformInputManager.GetButtonDown("Dash") || Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             Dash();
         }

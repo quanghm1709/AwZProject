@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityStandardAssets.CrossPlatformInput;
 
 public class RangeWeaponController : WeaponController
 {
@@ -41,7 +40,7 @@ public class RangeWeaponController : WeaponController
             {
                 if (canAttack && !isReload)
                 {
-                    if (Input.GetKey(KeyCode.Space) || CrossPlatformInputManager.GetButton("Fire"))
+                    if (Input.GetMouseButtonDown(0))
                     {
                         //Instantiate(bullet, firePoint.position, firePoint.rotation);
                         //Instantiate(fireEft, dropBulletEff.position, dropBulletEff.rotation);
