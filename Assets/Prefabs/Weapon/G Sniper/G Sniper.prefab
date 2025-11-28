@@ -23,13 +23,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4966881981380199613}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.823, y: 0.299, z: 0}
+  m_LocalPosition: {x: 2.117, y: 0.287, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4966881982075951306}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4966881981508851947
 GameObject:
@@ -54,13 +54,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4966881981508851947}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.185, y: 0.27899998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4966881982075951306}
-  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4966881981614071405
 GameObject:
@@ -86,13 +86,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4966881981614071405}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.806, y: 0.146, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4966881982075951306}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4966881981614071395
 SpriteRenderer:
@@ -111,6 +111,11 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -132,10 +137,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1604931593
   m_SortingLayer: 2
   m_SortingOrder: 2
-  m_Sprite: {fileID: 5452052114753543233, guid: 498ed7686d148f948b20c66256a0f7a4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bf1d0930f85252941bddc2f30e25a919, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -170,6 +176,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4966881982075951307}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.22999999, y: 0.22, z: -2.8233135}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -179,7 +186,6 @@ Transform:
   - {fileID: 4966881981380199612}
   - {fileID: 4966881981508851946}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4966881982075951305
 MonoBehaviour:
@@ -196,7 +202,7 @@ MonoBehaviour:
   weaponName: G Sniper
   weapLv: 0
   damage: 5
-  weapUI: {fileID: 5452052114753543233, guid: 498ed7686d148f948b20c66256a0f7a4, type: 3}
+  weapUI: {fileID: 21300000, guid: bf1d0930f85252941bddc2f30e25a919, type: 3}
   timeBtwAttack: 2
   maxBullet: 4
   price: 3000
@@ -208,4 +214,5 @@ MonoBehaviour:
   fireEft: {fileID: 6916412757550715927, guid: f4fcd40f3cd8fae4d88dbb911248f23e, type: 3}
   bulletData: {fileID: 0}
   currentBullet: 0
+  magazine: 0
   reloadtime: 0

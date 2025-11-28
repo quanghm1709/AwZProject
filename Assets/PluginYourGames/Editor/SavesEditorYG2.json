@@ -1,0 +1,15 @@
+{
+    "intExample": 5,
+    "strExample": "Hello!",
+    "boolExample": [
+        false,
+        false,
+        false,
+        false
+    ],
+    "idSave": 4,
+    "gold": 311,
+    "ownerWeap": [
+        "Base Gun"
+    ]
+}

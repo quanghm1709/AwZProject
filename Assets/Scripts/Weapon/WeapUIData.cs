@@ -13,10 +13,26 @@ public class WeapUIData : MonoBehaviour
     [SerializeField] private Text weapAmmo;
     [SerializeField] private Text weapPrice;
     [SerializeField] private bool isOwner;
+    [SerializeField] StartScreenUI startScreenUI;    
+    
     private float price;
 
     private void Start()
     {
+        if (DataManager.Instance.OwnerWeapon == null)
+        {
+            DataManager.Instance.OwnerWeapon = new List<string>();
+        }
+
+        if (DataManager.Instance.OwnerWeapon.Contains(weapName.text))
+        {
+            isOwner = true;
+        }
+        else
+        {
+            isOwner = false;
+        }
+
         if (!isOwner)
         {
             buyBtn.onClick.AddListener(() => Buying());
@@ -40,18 +56,20 @@ public class WeapUIData : MonoBehaviour
     
     public void Buying()
     {
-        if(GameManager.instance.playerGold < price && !isOwner)
+        if(DataManager.Instance.Gold < price && !isOwner)
         {
-            StartScreenUI.instance.WatchAds();
+            //StartScreenUI.instance.WatchAds();
+            startScreenUI.PopupMessage("Not enough gun gold!");
         }
         else
         {
-            GameManager.instance.playerGold -= (int) price;
+            DataManager.Instance.Gold -= (int) price;
             isOwner = true;
             buyBtn.onClick.RemoveAllListeners();
             buyBtn.onClick.AddListener(() => Equip());
             weapPrice.text = "Equip";
             buyBtn.gameObject.transform.GetChild(0).GetComponent<Outline>().effectColor = new Color(0, 64, 91, 255);
+            DataManager.Instance.OwnerWeapon.Add(weapName.text);
         }
     }
 

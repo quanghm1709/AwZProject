@@ -34,37 +34,13 @@ public class RangeWeaponController : WeaponController
 
     private void Update()
     {
-        if(magazine>=0|| gameObject.name.Equals("Base Gun"))
+        if (Input.GetMouseButtonDown(0))
         {
-            if (currentBullet > 0)
-            {
-                if (canAttack && !isReload)
-                {
-                    if (Input.GetMouseButtonDown(0))
-                    {
-                        //Instantiate(bullet, firePoint.position, firePoint.rotation);
-                        //Instantiate(fireEft, dropBulletEff.position, dropBulletEff.rotation);
-                        GameObject b = BulletPool.instance.bulletPool.GetObject(bullet.name);
-                        b.transform.position = firePoint.position;
-                        b.transform.rotation = firePoint.rotation;
-                        b.GetComponent<BulletController>().Setup(damage);
+            StartCoroutine(CallShoot());
+        }
 
-                        GameObject ef = BulletPool.instance.bulletPool.GetObject(fireEft.name);
-                        ef.transform.position = dropBulletEff.position;
-                    
-                        timeBtwAtk = timeBtwAttack;
-                        currentBullet -= 1;
-                    }
-                }
-            }
-            else
-            {
-                reloadtime = reloadTime;
-                currentBullet = maxBullet;
-                magazine--;
-            }
-        
-
+        //if (magazine>=0|| gameObject.name.Equals("Base Gun"))
+        {
             //Reload
             if (reloadtime > 0)
             {
@@ -92,14 +68,45 @@ public class RangeWeaponController : WeaponController
             }
 
         }
-        else if(magazine<0)
-        {
+        //else if(magazine<0)
+        //{
             
-            PlayerController.instance.SwapWeap(null);
-            Destroy(this.gameObject);
-        }
+        //    PlayerController.instance.SwapWeap(null);
+        //    Destroy(this.gameObject);
+        //}
     }
 
+    IEnumerator CallShoot()
+    {
+        if (currentBullet > 0)
+        {
+            if (canAttack && !isReload)
+            {
+                {
+                    //Instantiate(bullet, firePoint.position, firePoint.rotation);
+                    //Instantiate(fireEft, dropBulletEff.position, dropBulletEff.rotation);
+                    GameObject b = BulletPool.instance.bulletPool.GetObject(bullet.name);
+                    b.transform.position = firePoint.position;
+                    b.transform.rotation = firePoint.rotation;
+                    b.GetComponent<BulletController>().Setup(damage);
+
+                    GameObject ef = BulletPool.instance.bulletPool.GetObject(fireEft.name);
+                    ef.transform.position = dropBulletEff.position;
+
+                    //timeBtwAtk = timeBtwAttack;
+                    currentBullet -= 1;
+                }
+            }
+            yield return new WaitForSeconds(timeBtwAtk);
+        }
+        else
+        {
+            reloadtime = reloadTime;
+            currentBullet = maxBullet;
+            magazine--;
+            yield return null;
+        }
+    }
     public void UpdateWeap(UpdateChoice.UpdateWeap upData)
     {
         try

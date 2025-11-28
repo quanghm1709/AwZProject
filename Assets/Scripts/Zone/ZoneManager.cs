@@ -17,14 +17,14 @@ public class ZoneManager : MonoBehaviour
 
     private void Update()
     {
-        if(phaseDurationCD < phaseDuration)
-        {
-            phaseDurationCD += Time.deltaTime;
-        }
-        else
-        {
-            SwapPhase();
-        }
+        //if(phaseDurationCD < phaseDuration)
+        //{
+        //    phaseDurationCD += Time.deltaTime;
+        //}
+        //else
+        //{
+        //    SwapPhase();
+        //}
 
     }
 

@@ -12,7 +12,7 @@ public class ItemPickup : MonoBehaviour
         {
             if (item.isCoin)
             {
-                GameManager.instance.coin += item.coinAmount;
+                DataManager.Instance.Gold += item.coinAmount;
                 gameObject.SetActive(false);
                 //Destroy(gameObject);
             }

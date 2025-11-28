@@ -12,7 +12,7 @@ public class HomeAdsReward : RewardedAdsButton
 
     public override void GrantReward()
     {
-        GameManager.instance.playerGold += price;
+        DataManager.Instance.Gold += price;
         StartCoroutine(WaitForNextAds());
     }
 

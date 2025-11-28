@@ -3,6 +3,7 @@ using System.IO;
 using UnityEngine;
 using YG.Utils;
 using YG.Insides;
+using System.Collections.Generic;
 #if NJSON_STORAGE_YG2
 using Newtonsoft.Json;
 #endif
@@ -16,6 +17,10 @@ namespace YG
 
         private static bool isFirstSession;
 
+        public static void ForceInit()
+        {
+            InitStorage();
+        }
         [InitYG]
         private static void InitStorage()
         {
@@ -53,7 +58,15 @@ namespace YG
         {
             Message("Set Default Saves");
             int idSave = saves.idSave;
-            saves = new SavesYG { idSave = idSave };
+            saves = new SavesYG 
+            { 
+                idSave = idSave, 
+                gold = 10,
+                ownerWeap = new List<string>
+                {   
+                    "Base Gun"
+                }
+            };
 
             if (Time.unscaledTime < 0.5f)
             {

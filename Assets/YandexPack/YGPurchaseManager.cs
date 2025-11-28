@@ -25,22 +25,20 @@ public class YGPurchaseManager : MonoBehaviour
 
     private void OnPurchaseSuccess(string id)
     {
-        //switch (id)
-        //{
-        //    case "apple_50":
-        //        DataManager.Instance.Fruits += 50;
-        //        Apple.Instance.UpdateApple();
-        //        break;       
-        //    case "apple_100":
-        //        DataManager.Instance.Fruits += 100;
-        //        Apple.Instance.UpdateApple();
+        switch (id)
+        {
+            case "gungold_100":
+                DataManager.Instance.Gold += 100;
+                break;
+            case "gungold_500":
+                DataManager.Instance.Gold += 500;
 
-        //        break;      
-        //    case "apple_500":
-        //        DataManager.Instance.Fruits += 500;
-        //        Apple.Instance.UpdateApple();
-        //        break;     
-        //}
-        //YG2.ConsumePurchaseByID(id, false);
+                break;
+            case "gungold_2000":
+                DataManager.Instance.Gold += 2000;
+                break;
+        }
+        GameObject.FindFirstObjectByType<StartScreenUI>().UpdateGoldUI();
+        YG2.ConsumePurchaseByID(id, false);
     }
 }

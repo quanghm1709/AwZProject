@@ -8,8 +8,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     [Header("Resource")]
-    [SerializeField] public int coin;
-    [SerializeField] public int playerGold;
+    public int coin;
+    public int playerGold;
     public List<Dictionary_magazine>  player_magazine;
     [Header("Map")]
     [SerializeField] public bool[] isUnlockMap;
