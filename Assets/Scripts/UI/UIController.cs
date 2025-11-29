@@ -74,8 +74,8 @@ public class UIController : MonoBehaviour
         reload.value = PlayerController.instance.currentWeap.reloadtime;
         reload.maxValue = PlayerController.instance.currentWeap.reloadTime;
 
-        currentGold.text = "Current Gold: " + GameManager.instance.coin;
-        gold.text = "Gold: " + GameManager.instance.coin;
+        currentGold.text = "Current Gold: " + DataManager.Instance.Gold;
+        gold.text = "Gold: " + DataManager.Instance.Gold;
         
         if (!updateScreen.activeInHierarchy)
         {

@@ -62,10 +62,7 @@ namespace YG
             { 
                 idSave = idSave, 
                 gold = 10,
-                ownerWeap = new List<string>
-                {   
-                    "Base Gun"
-                }
+                
             };
 
             if (Time.unscaledTime < 0.5f)

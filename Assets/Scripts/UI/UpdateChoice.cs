@@ -32,7 +32,7 @@ public class UpdateChoice : MonoBehaviour
 
     public void UpdatePlayerStats(UpdateCard card)
     {
-        if(GameManager.instance.coin < card.cardCost)
+        if(DataManager.Instance.Gold < card.cardCost)
         {
             return;
         }
@@ -40,7 +40,7 @@ public class UpdateChoice : MonoBehaviour
         {
             PlayerController.instance.UpdateStats(upPlayer[card.cardID]);
             UIController.instance.updateScreen.SetActive(false);
-            GameManager.instance.coin -= card.cardCost;
+            DataManager.Instance.Gold -= card.cardCost;
         }
 
     }
@@ -48,7 +48,7 @@ public class UpdateChoice : MonoBehaviour
     public void UpdateWeapStats(UpdateCard card)
     {
 
-        if (GameManager.instance.coin < card.cardCost)
+        if (DataManager.Instance.Gold < card.cardCost)
         {
             return;
         }
@@ -56,7 +56,7 @@ public class UpdateChoice : MonoBehaviour
         {
             PlayerController.instance.UpdateCurrentWeap(upWeap[card.cardID]);
             UIController.instance.updateScreen.SetActive(false);
-            GameManager.instance.coin -= card.cardCost;
+            DataManager.Instance.Gold -= card.cardCost;
         }
         
     }
@@ -64,13 +64,13 @@ public class UpdateChoice : MonoBehaviour
     public void SwapWeap(UpdateCard card)
     {
 
-        if (GameManager.instance.coin < card.cardCost)
+        if (DataManager.Instance.Gold < card.cardCost)
         {
             return;
         }
         else
         {
-            GameManager.instance.coin -= card.cardCost;
+            DataManager.Instance.Gold -= card.cardCost;
             //Delete curretn weap
             foreach (Transform child in PlayerController.instance.hand)
             {

@@ -91,6 +91,7 @@ public class RangeWeaponController : WeaponController
                     b.GetComponent<BulletController>().Setup(damage);
 
                     GameObject ef = BulletPool.instance.bulletPool.GetObject(fireEft.name);
+ 
                     ef.transform.position = dropBulletEff.position;
 
                     //timeBtwAtk = timeBtwAttack;

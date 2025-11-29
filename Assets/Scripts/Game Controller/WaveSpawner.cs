@@ -81,7 +81,7 @@ public class WaveSpawner : MonoBehaviour
             UIController.instance.nextWaveSlider.maxValue = timeBtwWave;
             waveCountdonw -= Time.deltaTime;
             UIController.instance.nextWaveCd.gameObject.SetActive(true);
-            UIController.instance.nextWaveCd.text = "TRÒ CHƠI BẮT ĐẦU SAU: " + ((int)waveCountdonw) + "s";
+            UIController.instance.nextWaveCd.text = "Game start after: " + ((int)waveCountdonw) + "s";
         }
     }
 
