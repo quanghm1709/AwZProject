@@ -58,11 +58,12 @@ public class UIController : MonoBehaviour
             Gun.transform.GetChild(1).GetComponent<Image>().sprite =  GameObject.Find("Weapon Manager").GetComponent<WeaponManager>().GetImage(i).weapUI;
             //Gun.transform.position = GunBtnGroup.transform.position;
         }
+        AudioManager.Instance.RunMusic();
     }
     private void Update()
     {
         multiEnemy = GameObject.FindGameObjectsWithTag("Enemy");
-        remainingEnemy.text = "Địch còn lại: " + multiEnemy.Length;
+        remainingEnemy.text = "Remain enemy: " + multiEnemy.Length;
 
         //Weap
 
@@ -89,12 +90,12 @@ public class UIController : MonoBehaviour
 
     internal void ReContinue()
     {
-        
         Time.timeScale = 1f;
         deathScreen.SetActive(false);
         GameObject.Find("Player")
             .GetComponent<PlayerController>()
             .Revive();
+        GameManager.instance.isPause= false;
     }
 
     public void GenerateUpdateCard(int k)
@@ -123,11 +124,13 @@ public class UIController : MonoBehaviour
         {
             pauseScreen.SetActive(false);
             Time.timeScale = 1.0f;
+            GameManager.instance.isPause = false;
         }
         else
         {
             pauseScreen.SetActive(true);
             Time.timeScale = 0f;
+            GameManager.instance.isPause = true;
         }
     }
 
@@ -146,6 +149,7 @@ public class UIController : MonoBehaviour
 
     public void LoadMenu()
     {
+        GameManager.instance.isPause = false;
         Time.timeScale = 1f;
         SceneManager.LoadScene("Start Screen");
     }

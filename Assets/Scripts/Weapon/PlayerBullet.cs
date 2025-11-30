@@ -56,7 +56,7 @@ public class PlayerBullet : BulletController
         {
             //gameObject.SetActive(false);
         }
-        transform.position = GameObject.Find("Player").transform.position;
+       // transform.position = GameObject.Find("Player").transform.position;
     }
 
 

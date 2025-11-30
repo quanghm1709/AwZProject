@@ -78,11 +78,13 @@ public class RangeWeaponController : WeaponController
 
     IEnumerator CallShoot()
     {
+        if (GameManager.instance.isPause) yield return null;
         if (currentBullet > 0)
         {
             if (canAttack && !isReload)
             {
                 {
+                    AudioManager.Instance.RunSfx();
                     //Instantiate(bullet, firePoint.position, firePoint.rotation);
                     //Instantiate(fireEft, dropBulletEff.position, dropBulletEff.rotation);
                     GameObject b = BulletPool.instance.bulletPool.GetObject(bullet.name);

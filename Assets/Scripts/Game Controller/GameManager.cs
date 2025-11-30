@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public int mapToInstatiate;
     public Dictionary<string, int> magazine_stored = new Dictionary<string, int>();
     public WeaponController weapon;
+    public bool isPause = false;
 
     [Serializable]
     public struct Dictionary_magazine

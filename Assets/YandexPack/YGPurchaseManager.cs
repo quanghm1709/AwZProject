@@ -30,8 +30,8 @@ public class YGPurchaseManager : MonoBehaviour
             case "gungold_100":
                 DataManager.Instance.Gold += 100;
                 break;
-            case "gungold_500":
-                DataManager.Instance.Gold += 500;
+            case "gungold_250":
+                DataManager.Instance.Gold += 250;
 
                 break;
             case "gungold_2000":
