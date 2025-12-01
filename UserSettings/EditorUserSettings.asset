@@ -6,34 +6,34 @@ EditorUserSettings:
   serializedVersion: 4
   m_ConfigSettings:
     RecentlyUsedSceneGuid-0:
-      value: 000507575051590b0b5d5e7547205e44154e4e2c2d7c7460787d1c67b3e3676f
-      flags: 0
-    RecentlyUsedSceneGuid-1:
-      value: 0106505355010803550a5e7b417b5b44124f48297f7d72672e794836b4b9673c
-      flags: 0
-    RecentlyUsedSceneGuid-2:
-      value: 5207505756065a580f0d087245255e44464e4b2c7f2a22657a7c4464b2b7356e
-      flags: 0
-    RecentlyUsedSceneGuid-3:
       value: 5055045056535a5f5e5c5c7240210c4445154e7f2f2c27682e7a446ab2e66539
       flags: 0
-    RecentlyUsedSceneGuid-4:
+    RecentlyUsedSceneGuid-1:
       value: 5007525f53505e5f0c0d0d7b137b5c444016487d747f7f352b2c4535e4e3656f
       flags: 0
-    RecentlyUsedSceneGuid-5:
+    RecentlyUsedSceneGuid-2:
       value: 06050d0403020c0e5508082044275d44154e1c2c79792060292d1f6be4b3666f
+      flags: 0
+    RecentlyUsedSceneGuid-3:
+      value: 010252545705500254570a2341275c44474f4d78797a236979794461e4e3613a
+      flags: 0
+    RecentlyUsedSceneGuid-4:
+      value: 53050c525c05595d550c5c70437a0a4442154f7e742a76607b2a1b37b1e46768
+      flags: 0
+    RecentlyUsedSceneGuid-5:
+      value: 5006005452560b0c5b085a75452507444315192b752e76312e711f6ab5b96d69
       flags: 0
     RecentlyUsedSceneGuid-6:
       value: 0152025053050c585d085d7744730d44404e487a2f7d7e347d781e60bbe6326f
       flags: 0
     RecentlyUsedSceneGuid-7:
-      value: 010252545705500254570a2341275c44474f4d78797a236979794461e4e3613a
+      value: 0106505355010803550a5e7b417b5b44124f48297f7d72672e794836b4b9673c
       flags: 0
     RecentlyUsedSceneGuid-8:
-      value: 5006005452560b0c5b085a75452507444315192b752e76312e711f6ab5b96d69
+      value: 5207505756065a580f0d087245255e44464e4b2c7f2a22657a7c4464b2b7356e
       flags: 0
     RecentlyUsedSceneGuid-9:
-      value: 53050c525c05595d550c5c70437a0a4442154f7e742a76607b2a1b37b1e46768
+      value: 5308515451045f5d5908597049210c44401619737d7a223129704436e0e46d6a
       flags: 0
     RecentlyUsedScenePath-0:
       value: 22424703114646680e0b0227036c6b150503563f22213229

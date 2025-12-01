@@ -17,9 +17,10 @@ public class EnemyController : MonoBehaviour
     public int currentAtk;
     public float timeBtwAtk;
     public bool canAttack;
+    private bool isDead = false;
 
     [HideInInspector] public float currentSpeed;
-    [SerializeField] public bool canMove = true;
+    public bool canMove = true;
 
     [Header("Component")]
     [SerializeField] public Rigidbody2D rb;
@@ -32,7 +33,7 @@ public class EnemyController : MonoBehaviour
     [Header("UI")]
     [SerializeField] protected Slider hpBar;
 
-    private void Start()
+    private void OnEnable()
     {
         currentAtk = maxAtk;
         timeBtwAtk = timeBtwAttack;
@@ -43,8 +44,7 @@ public class EnemyController : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
 
-        transform.rotation = Quaternion.Euler(Vector3.zero);
-        transform.GetChild(0).rotation = Quaternion.Euler(Vector3.zero);
+      
     }
 
     private void Update()
@@ -54,18 +54,18 @@ public class EnemyController : MonoBehaviour
         Flip();
 
         Attack();
-
-        UpdateHpUI();
     }
     
     public void GetDamage(int damage)
     {
+        if(isDead) return;
         GameObject goldPool = GameObject.Find("Gold Pool");
 
         currentHp -= damage;
-        if(currentHp <= 0)
+        UpdateHpUI();
+
+        if (currentHp <= 0)
         {
-           
             GameObject g = goldPool.GetComponent<ObjectPool>().GetObject(itemToDrop[0].name);
             //int a = Random.RandomRange(1, 100);
             //int b = Random.RandomRange(0, 2);
@@ -80,6 +80,8 @@ public class EnemyController : MonoBehaviour
             g.transform.position = transform.position;
             anim.SetBool("isDead", true);
             StartCoroutine(OnDead());
+            isDead = true;
+            canMove = false;
         }
         else
         {
@@ -140,6 +142,13 @@ public class EnemyController : MonoBehaviour
         currentHp = maxHp;
         agent.isStopped = false;
         anim.SetBool("isDead", false);
+        canMove = true;
+        transform.rotation = Quaternion.Euler(Vector3.zero);
+        transform.GetChild(0).rotation = Quaternion.Euler(Vector3.zero);
+
+        isDead = false;
+
+        UpdateHpUI();
     }
 
     void OnDrawGizmosSelected()

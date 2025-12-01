@@ -27,6 +27,7 @@ public class WeapUIData : MonoBehaviour
         if (DataManager.Instance.OwnerWeapon.Contains(weapName.text))
         {
             isOwner = true;
+            UpdateOwner();
         }
         else
         {
@@ -65,12 +66,17 @@ public class WeapUIData : MonoBehaviour
         {
             DataManager.Instance.Gold -= (int) price;
             isOwner = true;
-            buyBtn.onClick.RemoveAllListeners();
-            buyBtn.onClick.AddListener(() => Equip());
-            weapPrice.text = "Equip";
-            buyBtn.gameObject.transform.GetChild(0).GetComponent<Outline>().effectColor = new Color(0, 64, 91, 255);
-            DataManager.Instance.OwnerWeapon.Add(weapName.text);
+            UpdateOwner();
         }
+    }
+
+    public void UpdateOwner()
+    {
+        buyBtn.onClick.RemoveAllListeners();
+        buyBtn.onClick.AddListener(() => Equip());
+        weapPrice.text = "Equip";
+        buyBtn.gameObject.transform.GetChild(0).GetComponent<Outline>().effectColor = new Color(0, 64, 91, 255);
+        DataManager.Instance.OwnerWeapon.Add(weapName.text);
     }
 
     public void Equip()

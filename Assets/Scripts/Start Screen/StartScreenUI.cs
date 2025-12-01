@@ -90,6 +90,7 @@ public class StartScreenUI : MonoBehaviour
             settingGroup.SetActive(true);
             startGroup.SetActive(false);
             gameTitle.SetActive(false);
+            shopPanel.SetActive(false);
         }
     }
 
@@ -98,10 +99,14 @@ public class StartScreenUI : MonoBehaviour
         if (shopPanel.activeInHierarchy)
         {
             shopPanel.SetActive(false);
+            startGroup.SetActive(true);
         }
         else
         {
             shopPanel.SetActive(true);
+            settingGroup.SetActive(false);
+            startGroup.SetActive(false);
+            gameTitle.SetActive(false);
         }
     }
     
