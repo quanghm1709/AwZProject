@@ -7,10 +7,12 @@
         false,
         false
     ],
-    "idSave": 45,
-    "gold": 571,
+    "idSave": 46,
+    "gold": 671,
     "ownerWeap": [
         "Base Gun",
-        "Wood SMG"
+        "Wood SMG",
+        "Wood SMG",
+        "Base Gun"
     ]
 }

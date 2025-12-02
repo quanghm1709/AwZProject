@@ -338,7 +338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 676c869f6c04b7848ae04d741545c51d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: gungold_100
+  id: 
   purchaseImageLoad: {fileID: 7385888911681223645}
   currencyImageLoad: {fileID: 7538624689642657797}
   showCurrencyCode: 0

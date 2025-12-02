@@ -170,7 +170,7 @@ MonoBehaviour:
       currencyImageURL: https://yastatic.net/s3/games-static/static-data/images/payments/sdk/currency-icon-s@2x.png
       consumed: 1
   Storage:
-    saveLocal: 0
+    saveLocal: 1
     saveCloud: 1
     flush: 0
   Basic:
